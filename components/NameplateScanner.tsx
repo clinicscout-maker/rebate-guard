@@ -14,6 +14,13 @@ export default function NameplateScanner({ onScanComplete }: Props) {
     const cameraInputRef = useRef<HTMLInputElement>(null);
     const galleryInputRef = useRef<HTMLInputElement>(null);
 
+    // Force 'capture' attribute implementation for reliability
+    React.useEffect(() => {
+        if (cameraInputRef.current) {
+            cameraInputRef.current.setAttribute('capture', 'environment');
+        }
+    }, []);
+
     const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0];
         if (!file) return;
