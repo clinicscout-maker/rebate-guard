@@ -6,6 +6,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import ScannerModal from '@/components/ScannerModal';
 import SimpleTriage from '@/components/SimpleTriage';
+import ScannerHero from '@/components/ScannerHero';
 
 export default function Home() {
   const [isScannerOpen, setIsScannerOpen] = useState(false);
@@ -38,15 +39,8 @@ export default function Home() {
           <div className="w-full max-w-md space-y-4">
             <SimpleTriage />
 
-            <div className="mt-8 pt-6 border-t border-slate-800/50 w-full flex flex-col items-center">
-              <p className="text-sm text-slate-500 mb-3">Already know your model number?</p>
-              <button
-                onClick={() => setIsScannerOpen(true)}
-                className="text-green-400 hover:text-green-300 font-medium flex items-center gap-2 transition-colors py-2 px-4 rounded-lg hover:bg-green-400/10"
-              >
-                <Search className="w-4 h-4" />
-                <span>Search Specific Model by Nameplate</span>
-              </button>
+            <div className="mt-12 w-full">
+              <ScannerHero />
             </div>
           </div>
         </section>
