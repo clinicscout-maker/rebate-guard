@@ -3,6 +3,7 @@
 import React from 'react';
 import { X } from 'lucide-react';
 import NameplateScanner from './NameplateScanner';
+import ModelSearchInput from './ModelSearchInput';
 
 type Props = {
     isOpen: boolean;
@@ -83,13 +84,16 @@ export default function ScannerModal({ isOpen, onClose }: Props) {
                             </div>
                             <div>
                                 <label className="block text-xs font-medium text-slate-400 mb-1">Model Number <span className="text-red-400">*</span></label>
-                                <input
-                                    type="text"
-                                    required
-                                    className="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-white text-sm focus:ring-1 focus:ring-green-500 outline-none"
+                                <ModelSearchInput
                                     value={manualData.model}
-                                    onChange={e => setManualData({ ...manualData, model: e.target.value })}
+                                    onChange={(val) => setManualData({ ...manualData, model: val })}
+                                    onSelect={(item) => setManualData({
+                                        ...manualData,
+                                        model: item.model_number,
+                                        brand: item.brand
+                                    })}
                                     placeholder="e.g. 24ABB336A310"
+                                    required
                                 />
                             </div>
                             <div>

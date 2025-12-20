@@ -2,8 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 
 # Try the main entry point first to see if we can get a session or just access it
-URL_MAIN = "https://oee.nrcan-rncan.gc.ca/pml-lmp/index.cfm?action=app.search-recherche&appliance=ashp"
-URL_DIRECT = "https://oee.nrcan-rncan.gc.ca/product/?product=ASHP1_GH"
+URL_MAIN = "https://spl-lpi.nrcan-rncan.gc.ca/en-US/product/?product=ASHP1_OHPA&page=1"
+URL_DIRECT = "https://spl-lpi.nrcan-rncan.gc.ca/en-US/product/?product=ASHP1_OHPA"
 
 def inspect_page():
     headers = {

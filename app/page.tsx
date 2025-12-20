@@ -5,6 +5,7 @@ import { ShieldCheck, Search, AlertTriangle, ThermometerSnowflake, FileWarning }
 import { useState } from 'react';
 import Link from 'next/link';
 import ScannerModal from '@/components/ScannerModal';
+import SimpleTriage from '@/components/SimpleTriage';
 
 export default function Home() {
   const [isScannerOpen, setIsScannerOpen] = useState(false);
@@ -35,16 +36,18 @@ export default function Home() {
           </p>
 
           <div className="w-full max-w-md space-y-4">
-            <button
-              onClick={() => setIsScannerOpen(true)}
-              className="w-full group bg-green-600 hover:bg-green-500 text-white font-bold text-lg py-4 px-8 rounded-xl shadow-lg shadow-green-500/50 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3 cursor-pointer"
-            >
-              <Search className="w-6 h-6" />
-              <span>Check Eligibility Now - Free</span>
-            </button>
-            <p className="text-sm text-slate-400 font-medium">
-              Trusted by 50+ Ontario Contractors. Official NRCan Data.
-            </p>
+            <SimpleTriage />
+
+            <div className="mt-8 pt-6 border-t border-slate-800/50 w-full flex flex-col items-center">
+              <p className="text-sm text-slate-500 mb-3">Already know your model number?</p>
+              <button
+                onClick={() => setIsScannerOpen(true)}
+                className="text-green-400 hover:text-green-300 font-medium flex items-center gap-2 transition-colors py-2 px-4 rounded-lg hover:bg-green-400/10"
+              >
+                <Search className="w-4 h-4" />
+                <span>Search Specific Model by Nameplate</span>
+              </button>
+            </div>
           </div>
         </section>
 
