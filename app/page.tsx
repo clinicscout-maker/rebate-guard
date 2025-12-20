@@ -1,4 +1,3 @@
-
 'use client';
 
 import { ShieldCheck, Search, AlertTriangle, ThermometerSnowflake, FileWarning } from 'lucide-react';
@@ -7,9 +6,12 @@ import Link from 'next/link';
 import ScannerModal from '@/components/ScannerModal';
 import SimpleTriage from '@/components/SimpleTriage';
 import ScannerHero from '@/components/ScannerHero';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useRebate } from '@/context/RebateContext';
 
 export default function Home() {
   const [isScannerOpen, setIsScannerOpen] = useState(false);
+  const { fuelSource } = useRebate();
 
   return (
     <div className="min-h-screen bg-slate-900 text-slate-50 font-sans selection:bg-green-500/30">
@@ -39,9 +41,19 @@ export default function Home() {
           <div className="w-full max-w-md space-y-4">
             <SimpleTriage />
 
-            <div className="mt-12 w-full">
-              <ScannerHero />
-            </div>
+            <AnimatePresence>
+              {fuelSource && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 10 }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                  className="mt-12 w-full"
+                >
+                  <ScannerHero />
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </section>
 

@@ -1,11 +1,14 @@
 'use client';
 
 import React, { useState, useRef } from 'react';
-import { Camera, Search, RefreshCw, AlertCircle } from 'lucide-react';
+import { Camera, Search, RefreshCw, AlertCircle, CheckCircle } from 'lucide-react';
 import ModelSearchInput from './ModelSearchInput';
 import { scanNameplate } from '@/app/actions/scan-nameplate';
+import { useRebate } from '@/context/RebateContext';
+import { PROVINCES } from '@/config/provinces';
 
 export default function ScannerHero() {
+    const { province, programMode } = useRebate();
     const [searchValue, setSearchValue] = useState('');
     const [isScanning, setIsScanning] = useState(false);
     const [error, setError] = useState<string | null>(null);
@@ -51,8 +54,29 @@ export default function ScannerHero() {
         reader.readAsDataURL(file);
     };
 
+    // Helper to get program name
+    const getProgramName = () => {
+        switch (programMode) {
+            case 'ENBRIDGE': return 'Enbridge HER+';
+            case 'SAVE_ON_ENERGY': return 'Save on Energy';
+            case 'OHPA': return 'Oil to Heat Pump (OHPA)';
+            case 'CLEANBC': return 'CleanBC';
+            case 'EFFICIENCY_NS': return 'Efficiency NS';
+            case 'GREENER_HOMES_LOAN': return 'Greener Homes Loan';
+            default: return 'Standard Rebate';
+        }
+    };
+
     return (
         <div className="w-full max-w-4xl mx-auto mt-8">
+            {/* Context Badge */}
+            <div className="flex justify-center mb-4">
+                <div className="bg-green-500/10 border border-green-500/20 text-green-400 px-4 py-1.5 rounded-full text-sm font-medium flex items-center gap-2 animate-in fade-in slide-in-from-bottom-2">
+                    <CheckCircle className="w-4 h-4" />
+                    Applying {PROVINCES[province]?.name} {getProgramName()} Rules
+                </div>
+            </div>
+
             <div className="bg-slate-900/50 backdrop-blur-sm rounded-2xl p-1 border border-slate-800">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 
@@ -103,10 +127,10 @@ export default function ScannerHero() {
 
                             <div className="text-center">
                                 <h3 className="text-xl font-bold text-white mb-1 group-hover:text-green-300 transition-colors">
-                                    Scan Nameplate (AI)
+                                    Scan & Verify
                                 </h3>
                                 <p className="text-sm text-slate-400 group-hover:text-slate-300 transition-colors">
-                                    Auto-detect Model & Serial #
+                                    Instant Rebate Check
                                 </p>
                             </div>
                         </button>
