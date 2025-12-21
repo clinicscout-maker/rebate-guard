@@ -21,7 +21,7 @@ export async function scanNameplate(base64Image: string) {
         // The 'generateObject' call supports image inputs in messages.
 
         const { object } = await generateObject({
-            model: google('models/gemini-flash-latest'),
+            model: google('models/gemini-2.0-flash'),
             schema: NameplateSchema,
             system: "You are an expert HVAC technician. Analyze the provided image of an equipment data plate. Extract the Model Number and Serial Number accurately. Ignore generic text like 'Volts', 'Hz', 'Phase', or 'Amps'. Return valid JSON.",
             messages: [
