@@ -21,7 +21,7 @@ export async function scanNameplate(base64Image: string) {
         // The 'generateObject' call supports image inputs in messages.
 
         const { object } = await generateObject({
-            model: google('gemini-flash-latest'),
+            model: google('models/gemini-1.5-flash'),
             schema: NameplateSchema,
             system: "You are an expert HVAC technician. Analyze the provided image of an equipment data plate. Extract the Model Number and Serial Number accurately. Ignore generic text like 'Volts', 'Hz', 'Phase', or 'Amps'. Return valid JSON.",
             messages: [
@@ -40,11 +40,17 @@ export async function scanNameplate(base64Image: string) {
             data: object
         };
 
-    } catch (error) {
+    } catch (error: any) {
         console.error("Gemini Scan Error:", error);
+
+        let errorMessage = "Failed to scan image. Please ensure the Model Number is clearly visible.";
+        if (error.toString().includes("429") || error.toString().includes("Quota")) {
+            errorMessage = "Google AI Quota Exceeded. Please check your billing at console.cloud.google.com.";
+        }
+
         return {
             success: false,
-            error: "Failed to scan image. Please ensure the Model Number is clearly visible."
+            error: errorMessage
         };
     }
 }
