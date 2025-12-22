@@ -1,0 +1,2843 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en-US" data-lang="en-US" crm-lang="en-US" dir="ltr" crm-lcid="1033"
+	same-site-mode="None">
+<head>
+		
+		<meta charset="utf-8" /><meta name="viewport" content="width=device-width,&#32;initial-scale=1.0" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<script type="text/javascript" >
+				
+        </script>
+	<title>
+	
+		Product
+		Searchable product list | Natural Resources Canada
+</title>
+		
+		<script src="/_portal/1c608a62-1372-4527-bc57-5353c7919b8d/Resources/ResourceManager?lang=en-US"></script>
+	
+	<script type="text/javascript">
+        // Refresh all powerBI Iframes on Login in one Iframe
+        window.addEventListener('message', function (event) {
+            if (event && event.data && event.data == 'refreshPowerBI') {
+                $("iframe.powerbi").each(function () {
+                    this.src = this.src;
+                });
+            }
+        });
+
+        // Fix for incorrect viewport width setting in IE 10 on Windows Phone 8.
+        if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+            var msViewportStyle = document.createElement("style");
+            msViewportStyle.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}"));
+            document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+        }
+    </script>
+		
+	
+		
+		<link href="/css/BootstrapV5/bootstrap.min.css" rel="stylesheet" />
+
+		<link href="https://content.powerapps.com/resource/powerappsportal/dist/font-awesome.BootstrapV5.bundle-2ce6efb497.css" onerror="javascript:&#32;var&#32;target&#32;=&#32;event.target;&#32;var&#32;link&#32;=&#32;document.createElement(&#39;link&#39;);&#32;link.crossOrigin&#32;=&#32;target.crossOrigin;&#32;link.href&#32;=&#32;&#39;/dist/font-awesome.BootstrapV5.bundle-2ce6efb497.css&#39;;&#32;link.rel&#32;=&#32;&#39;stylesheet&#39;;&#32;target.insertAdjacentElement(&#39;afterend&#39;,link);" rel="stylesheet" />
+
+				<link href="https://content.powerapps.com/resource/powerappsportal/dist/preform.BootstrapV5.bundle-a79c3ca7cf.css" onerror="javascript:&#32;var&#32;target&#32;=&#32;event.target;&#32;var&#32;link&#32;=&#32;document.createElement(&#39;link&#39;);&#32;link.crossOrigin&#32;=&#32;target.crossOrigin;&#32;link.href&#32;=&#32;&#39;/dist/preform.BootstrapV5.bundle-a79c3ca7cf.css&#39;;&#32;link.rel&#32;=&#32;&#39;stylesheet&#39;;&#32;target.insertAdjacentElement(&#39;afterend&#39;,link);" rel="stylesheet" />
+
+
+		
+			
+
+
+		
+		
+		<style type="text/css">body {
+	visibility: hidden;
+}
+
+body.page-loaded {
+	visibility: visible;
+}
+
+h1 {
+	font-size: 2.125rem !important;
+}
+
+h2 {
+	font-size: 1.75rem !important;
+	margin-top: 1rem;
+}
+
+h3 {
+	font-size: 1rem !important;
+}
+
+.table-scroll-wrapper {
+	flex-grow: 1;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+	/* For mobile momentum scroll */
+}
+
+#tableData-table th:first-child,
+#tableData-table td:first-child {
+	position: sticky;
+	left: 0;
+	background: white;
+	z-index: 1;
+}
+
+#tableData-table {
+	min-width: max-content;
+	border-collapse: collapse;
+	flex-grow: 1;
+	max-width: 100%;
+	background-color: #f9f9f9;
+}
+
+#tableData-table th,
+#tableData-table td {
+	max-width: 150px;
+	min-width: 80px;
+	font-size: 0.9rem;
+	white-space: normal;
+	word-break: break-word;
+}
+
+input[type='checkbox'] {
+	accent-color: #26374a;
+	cursor: pointer;
+}
+
+#reset-filters,
+#apply-filters {
+	width: 100%;
+	background-color: #26374a;
+	color: #fff;
+	padding: 0.75rem 2rem;
+	font-size: 1rem;
+	border: none;
+	border-radius: 0.5rem;
+	cursor: pointer;
+	box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.2);
+	transition: background-color 0.3s ease;
+	margin-bottom: 0.5rem;
+}
+
+#reset-filters:hover,
+#apply-filters:hover {
+	background-color: #ddd;
+}
+
+.disabled {
+	pointer-events: none;
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.enabled {
+	pointer-events: auto !important;
+	opacity: 1 !important;
+	cursor: pointer !important;
+}
+
+#cancel-csv {
+	font-size: 1rem;
+	cursor: pointer !important;
+	white-space: nowrap;
+	opacity: 1 !important;
+	pointer-events: auto !important;
+	color: red;
+}
+
+#download-csv,
+#compare-link,
+#remove-selected {
+	font-size: 1rem;
+	font-weight: 600;
+	padding: 0.5rem;
+	margin-top: -2rem !important;
+	margin-bottom: 0 !important;
+	cursor: pointer;
+}
+
+#download-csv-text:hover,
+#compare-link:hover,
+#remove-selected-text:hover,
+#cancel-csv:hover {
+	background-color: #ddd;
+	transform: scale(1.03);
+}
+
+.es-links {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: flex-end; /* right-align in its container */
+}
+
+.es-links .copy-link {
+	background: none;
+	border: 0;
+	padding: 0;
+	cursor: pointer;
+	color: inherit;
+	line-height: 1;
+}
+.es-links .copy-link:focus {
+	outline: 2px solid currentColor;
+	outline-offset: 2px;
+}
+.es-links .copy-tip {
+	font-size: 0.85rem;
+	color: #2e7d32;
+}
+
+#remove-selected {
+	margin-top: 0 !important;
+	color: #284162;
+	text-decoration: underline;
+}
+
+#download-csv {
+	float: right;
+	cursor: pointer;
+}
+
+#compare-link {
+	float: left;
+	margin-left: 5rem;
+}
+
+.table-container {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	gap: 0.25rem;
+	background-color: #f9f9f9;
+	margin-right: 1rem;
+}
+
+#filters-container {
+	position: relative;
+	width: 17%;
+	padding: 0.75rem;
+	margin-left: 0.75rem;
+}
+
+.filter-items {
+	max-height: 25rem;
+	overflow-y: auto;
+	margin-bottom: 0.625rem;
+}
+
+.filter-items label {
+	font-weight: normal;
+	font-size: 0.75rem;
+	display: inline-block;
+	width: 100%;
+	margin-bottom: 0;
+}
+
+.filter-items input[type='checkbox'] {
+	margin-right: 0.125rem;
+}
+
+.filter-section {
+	margin-bottom: 0;
+	border-bottom: 1px solid #d5d5d5;
+}
+
+.filter-section h3 {
+	font-size: 0.9rem !important;
+	margin: 0.75rem 0 0.25rem 0;
+}
+
+.filter-section select {
+	width: 100%;
+	padding: 0.15rem;
+}
+
+.filter-section span,
+.filter-section select {
+	font-size: 0.75rem;
+}
+
+.filter-section input[type='text'] {
+	width: 100%;
+	font-size: 0.75rem;
+	padding: 0.25rem;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	border-radius: 0.25rem;
+}
+
+.filter-section input[type='text'] {
+	width: 100%;
+	font-size: 0.75rem;
+	padding: 0.25rem;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	border-radius: 0.25rem;
+}
+
+.filters-loading {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 0.75rem 0;
+	text-align: center;
+}
+.filters-loading .spinner-lg {
+	width: 2.5rem;
+	height: 2.5rem;
+	border-width: 4px;
+	margin-bottom: 0.5rem;
+}
+.filters-loading .loading-text {
+	font-size: 1rem;
+	font-weight: 500;
+	color: #333;
+}
+.filters-hidden {
+	display: none !important;
+}
+
+.pagination {
+	margin-top: 0.25rem !important;
+	display: flex !important;
+	justify-content: center !important;
+}
+
+.pagination-btn {
+	margin: 0 0.25rem;
+	padding: 0.25rem 1.5rem;
+	text-decoration: none;
+	background-color: #f4f4f4;
+	color: #333;
+	border: 1px solid #ddd;
+	border-radius: 0.5rem;
+	cursor: pointer;
+}
+
+.pagination-btn:hover {
+	background-color: #ddd;
+}
+
+.pagination-btn.active {
+	background-color: #26374a;
+	border: 1px solid #26374a;
+	color: #fff;
+}
+
+.pagination-btn:disabled {
+	pointer-events: none;
+	background-color: #e9ecef;
+	color: #6c757d;
+	border-color: #dee2e6;
+}
+
+#model-search {
+	width: 100%;
+	padding: 0.5rem;
+	font-size: 0.75rem;
+	border: 1px solid #ddd;
+	border-radius: 0.25rem;
+	margin-top: 0.25rem;
+	height: 35px;
+}
+
+#model-search:focus {
+	border-color: #26374a;
+	outline: none;
+}
+
+#model-search::placeholder {
+	color: #aaa;
+	opacity: 1;
+}
+
+.modal {
+	display: flex;
+	position: fixed;
+	z-index: 1000;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+	background-color: white !important;
+	margin: auto;
+	margin-top: 5%;
+	padding: 2.5rem;
+	border: 1px solid #888;
+	width: 90%;
+	position: relative;
+}
+
+#close-modal {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	font-size: 1.5rem;
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+.close {
+	color: #000;
+	float: left;
+	font-size: 3rem !important;
+	font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+td input[type='checkbox'] {
+	display: block;
+	margin: 0 auto;
+}
+
+#selected-count {
+	margin-left: 0.25rem;
+	font-size: 1.025rem;
+	text-decoration: none !important;
+	display: inline-block;
+}
+
+.compare-checkbox,
+.remove-checkbox {
+	transform: scale(1.3);
+}
+
+#compare-container {
+	margin-top: 1rem;
+}
+
+.comparison-scroll-wrapper {
+	overflow-x: auto;
+	overflow-y: auto;
+	max-width: 100%;
+	max-height: 70vh;
+	padding-bottom: 1rem;
+}
+
+/* Optional: make table content more compact */
+#compare-container table {
+	width: max-content;
+	min-width: 100%;
+	border-collapse: collapse;
+}
+
+.slider-container {
+	margin-bottom: 1.25rem;
+}
+
+input[type='range'] {
+	width: 100%;
+	height: 0.5rem;
+	accent-color: #26374a;
+	background: #ddd;
+	border-radius: 0.625rem;
+	outline: none;
+	opacity: 0.8;
+	transition: opacity 0.2s;
+}
+
+input[type='range']::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 1rem;
+	height: 1rem;
+	cursor: pointer;
+	border-radius: 50%;
+}
+
+input[type='range']:hover {
+	opacity: 1;
+}
+
+.range-value {
+	display: inline-block;
+	margin-left: 1.25rem;
+	font-size: 0.75rem;
+	color: #333;
+}
+
+@media (max-width: 1024px) {
+	#filters-container {
+		position: fixed;
+		top: -1rem;
+		left: 5%;
+		width: 85%;
+		height: 85vh;
+		background-color: #fff;
+		overflow-y: auto;
+		z-index: 3000;
+		transform: translateX(-100%);
+		transition: transform 0.3s ease;
+		margin-left: -1rem;
+	}
+
+	#filters-container.active {
+		transform: translateX(0);
+	}
+
+	#products-table {
+		max-width: 100%;
+	}
+}
+
+#toggle-filters {
+	display: none;
+	position: absolute;
+	top: 0.5rem;
+	left: 0.5rem;
+	background-color: #26374a;
+	color: #fff;
+	padding: 0.75rem;
+	border: none;
+	border-radius: 0.5rem;
+	cursor: pointer;
+	z-index: 3000;
+}
+
+@media (max-width: 1024px) {
+	#toggle-filters {
+		display: block;
+	}
+}
+
+/* Spinner Style */
+.spinner {
+	display: inline-block;
+	width: 1rem;
+	height: 1rem;
+	border: 2px solid #f3f3f3;
+	border-top: 2px solid #26374a;
+	border-radius: 50%;
+	animation: spin 0.6s linear infinite;
+	vertical-align: middle;
+	margin-left: 0.5rem;
+}
+
+.spinner-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.loading-label {
+	margin-top: 0.75rem;
+	font-size: 1rem;
+	font-weight: 600;
+	color: #26374a;
+}
+
+.spinner-lg {
+	width: 3rem;
+	height: 3rem;
+	border-width: 6px;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+/* Initially hide spinner */
+#download-spinner,
+#loading-spinner {
+	display: none;
+}
+
+#loading-spinner {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(255, 255, 255, 0.7);
+	justify-content: center;
+	align-items: center;
+	z-index: 2000;
+}
+
+#download-spinner {
+	margin-right: 6px;
+	margin-bottom: 6px;
+}</style>
+		
+		
+		
+		
+	
+		
+		<link href="https://content.powerapps.com/resource/powerappsportal/dist/pwa-style.bundle-55718a4c0d.css" onerror="javascript:&#32;var&#32;target&#32;=&#32;event.target;&#32;var&#32;link&#32;=&#32;document.createElement(&#39;link&#39;);&#32;link.crossOrigin&#32;=&#32;target.crossOrigin;&#32;link.href&#32;=&#32;&#39;/dist/pwa-style.bundle-55718a4c0d.css&#39;;&#32;link.rel&#32;=&#32;&#39;stylesheet&#39;;&#32;target.insertAdjacentElement(&#39;afterend&#39;,link);" rel="stylesheet" />
+
+		</head>
+<body data-sitemap-state="/Product/:/"
+	data-dateformat="M/d/yyyy"
+	data-timeformat="h:mm tt"
+	data-datetimeformat="M/d/yyyy h:mm tt"
+	data-app-path="/"
+	data-ckeditor-basepath="/js/BaseHtmlContentDesigner/Libs/msdyncrm_/libs/ckeditor/"
+	data-case-deflection-url="/_services/search/1c608a62-1372-4527-bc57-5353c7919b8d">
+
+
+	
+		<link href="https://content.powerapps.com/resource/powerappsportal/dist/pcf-style.bundle-373a0f4982.css" onerror="javascript:&#32;var&#32;target&#32;=&#32;event.target;&#32;var&#32;link&#32;=&#32;document.createElement(&#39;link&#39;);&#32;link.crossOrigin&#32;=&#32;target.crossOrigin;&#32;link.href&#32;=&#32;&#39;/dist/pcf-style.bundle-373a0f4982.css&#39;;&#32;link.rel&#32;=&#32;&#39;stylesheet&#39;;&#32;target.insertAdjacentElement(&#39;afterend&#39;,link);" rel="stylesheet" />
+
+			
+	
+		
+
+	<div id="offlineNotificationBar" class="displayNone">
+		<img alt="web" class="col-3" id="web" onerror="javascript:&#32;var&#32;target&#32;=&#32;event.target;&#32;var&#32;img&#32;=&#32;document.createElement(&#39;img&#39;);&#32;img.src&#32;=&#32;&#39;/css/images/web.png&#39;;&#32;img.alt&#32;=&#32;&#39;web&#39;;&#32;img.id&#32;=&#32;&#39;web&#39;&#32;;&#32;target.insertAdjacentElement(&#39;afterend&#39;,img);&#32;target.remove();" src="https://content.powerapps.com/resource/powerappsportal/img/web.png" />
+		<div id="message">You&#8217;re offline. This is a read only version of the page.</div>
+		<div id="close" onclick="this.parentElement.style.display='none';"><img alt="close" class="col-3" onerror="javascript:&#32;var&#32;target&#32;=&#32;event.target;&#32;var&#32;img&#32;=&#32;document.createElement(&#39;img&#39;);&#32;img.src&#32;=&#32;&#39;/css/images/close.png&#39;;&#32;img.alt&#32;=&#32;&#39;close&#39;;&#32;img.id&#32;=&#32;&#39;&#39;&#32;;&#32;target.insertAdjacentElement(&#39;afterend&#39;,img);&#32;target.remove();" src="https://content.powerapps.com/resource/powerappsportal/img/close.png" /></div>
+	</div>
+
+	
+
+	<script type="text/javascript">
+        window.DisableCkEditor = window.DisableCkEditor || {};
+		DisableCkEditor.Value = 'False';
+    </script>
+
+	<script type="text/javascript">
+        var enableOmniChannelWidgetWithSiteCopilot = 'False';
+        if (enableOmniChannelWidgetWithSiteCopilot === "True" || enableOmniChannelWidgetWithSiteCopilot === "true") {
+            const authUrl = window.location.origin + "/_services/auth/portalusertoken";
+            const fetchWithRetries = async (url, options, retries) => {
+                try {
+                    const authResponse = await fetch(url, options);
+                    const token = await authResponse.text();
+                    sessionStorage['c2Token'] = token;
+                } catch (err) {
+                    if (retries === 1) throw err;
+                    return await fetchWithRetries(url, options, retries - 1);
+                }
+            };
+            fetchWithRetries(authUrl, { method: "POST" }, 4);
+        }
+    </script>
+
+	<script type="text/javascript">
+		var isPvaBotAuthenticated = sessionStorage['isPvaBotAuthenticated'];
+		var isPortalUserLoggedIn = 'False';
+
+        if ((isPvaBotAuthenticated != null || isPvaBotAuthenticated != undefined) && isPvaBotAuthenticated != isPortalUserLoggedIn) {
+			sessionStorage['triggerPvaBotSignOut'] = true;
+			sessionStorage.removeItem('c2Token');
+            sessionStorage.removeItem('directLinetoken');
+            sessionStorage.removeItem('conversation_Id');
+
+			sessionStorage.removeItem('bot_c2Token');
+			sessionStorage.removeItem('botdirectLinetoken');
+            sessionStorage.removeItem('botconversation_Id');
+		}
+		sessionStorage['isPvaBotAuthenticated'] = isPortalUserLoggedIn;
+    </script>
+
+	<script type="text/javascript">
+		window["CSPSettings"] = window["CSPSettings"] || {};
+		window["CSPSettings"].nonce = '';
+        window["FabricConfig"] = window["FabricConfig"] || {};
+        window["FabricConfig"].mergeStyles = window["FabricConfig"].mergeStyles || {};
+		window["FabricConfig"].mergeStyles.cspSettings = window["CSPSettings"];
+        window["Microsoft"] = window["Microsoft"] || {};
+		window["Microsoft"].Dynamic365 = {
+			Portal: {
+				
+				User: {
+					userName: '',
+					firstName: '',
+					lastName: '',
+					email: '',
+					contactId: '',
+					userRoles: [],
+				},
+				
+				version: '9.7.9.55',
+				type: 'PowerPages_BlankTemplate_V2',
+				id: '3dfef9e8-54de-4bbf-b4f3-430e0211b303', 
+				geo: 'CAN', 
+				tenant: '05c95b33-90ca-49d5-b644-288b930b912b', 
+				correlationId: '91f9501c-313b-43b1-a96f-adf837da5063',
+                orgEnvironmentId: 'bbaf0819-44c6-ec4c-89b9-863ca65aaaf0',
+                orgId: '2ce22512-ffb7-ef11-b8e4-6045bd5bd6f0',
+                portalProductionOrTrialType: 'Production',
+                isTelemetryEnabled: 'True',
+                InstrumentationSettings: {
+                    instrumentationKey: '197418c5cb8c4426b201f9db2e87b914-87887378-2790-49b0-9295-51f43b6204b1-7172',
+                    collectorEndpoint: 'https://us-mobile.events.data.microsoft.com/OneCollector/1.0/'
+                },
+                timerProfileForBatching: 'NEAR_REAL_TIME',
+                activeLanguages: ["en-US","fr-FR"],
+                isClientApiEnabled: 'True'
+            }
+        };
+
+		window["Microsoft"].Dynamic365.Portal.onPagesClientApiReady = (callback) => {
+			return new Promise((resolve, reject) => {
+				let isComplete = false;
+				let timeoutId;
+				const timeoutInterval = 10000;
+		
+				function handleReady() {
+					if (!isComplete && window.$pages) {
+						isComplete = true;
+						clearTimeout(timeoutId);
+						try {
+							if (typeof callback === "function") {
+								callback(window.$pages);
+							}
+						} catch (e) {
+							console.error("onPagesClientApiReady callback error:", e);
+						}
+						resolve(window.$pages); // should we reject if callback throws an error
+					}
+				}
+		
+				if (window.$pages) {
+					handleReady();
+					return;
+				}
+		
+				function sdkListener() {
+					handleReady();
+					window.removeEventListener('pagesSDKInitialized', sdkListener);
+				}
+		
+				window.addEventListener('pagesSDKInitialized', sdkListener);
+		
+				timeoutId = setTimeout(() => {
+					if (!isComplete) {
+						window.removeEventListener('pagesSDKInitialized', sdkListener);
+						if (window.$pages) {
+							handleReady();
+						} else {
+							isComplete = true;
+							reject(new Error('window.$pages not available.'));
+						}
+					}
+				}, timeoutInterval);
+			});
+		};
+
+        // Mark request not cacheable if Dynamics365PortalAnalytics cookie is being refreshed by the server or if the cookie in request header is invalid
+		
+
+        // For client side telemetry intializing Dynamics365PortalAnalytics cookie object
+		
+        window["Microsoft"].Dynamic365.Portal.dynamics365PortalAnalytics = 'kqcyKVaYOzateNyNveO-gh-7Ue4jooBLdB3j-ZF6E8m53AF_CT_qK-kPtP-WTf_6iVCC6S-MJGbUgRdJ3k0p7nPyvJooGjKjrmdvfE69qpmWcce6fXAl_5rJvWRFXDJXXSJ5lpqXJs5gYd1GNWY_sA2'; // CodeQL [SM00430] False Positive: only alphanumeric chars allowed, for non-alphanumeric char it will return INVALID_CHARACTERS_IN_COOKIE 
+		
+
+	</script>
+	
+	<script type="text/javascript">
+
+		
+    </script>
+
+	
+		
+
+
+<header>
+    <div id="wb-bnr" class="container">
+        <div class="row">
+            <section id="wb-lng" class="col-xs-3 col-sm-12 pull-right text-right">
+                <h2 class="wb-inv">Language selection</h2>
+                <ul class="list-inline mrgn-bttm-0">
+                    <li>                    
+                    
+                        
+                            
+                        
+                            
+                                <a class="language-link" lang="fr" hreflang="fr" data-url="/fr-FR/product/?product=ASHP1_OHPA&page=1" href="#">
+                                <span class="hidden-xs">Français</span>
+                                    <abbr title="Français" class="visible-xs h3 mrgn-tp-sm mrgn-bttm-0 text-uppercase">fr</abbr>
+                                </a>
+                            
+                        
+                    
+
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function ()
+                        {
+                            // Select all elements that need URL decoding.
+                            let links = document.querySelectorAll('a.language-link');
+                            links.forEach(function (link)
+                            {
+                                // Decode the URL part and set it back on the href attribute.
+                                link.href = decodeURIComponent(link.getAttribute('data-url'));
+                            });
+                        });
+                    </script>
+                    
+                    </li>
+                </ul>
+            </section>
+            <div class="brand col-xs-9 col-sm-5 col-md-4" property="publisher" resource="#wb-publisher" typeof="GovernmentOrganization">
+                <a href="https://www.canada.ca/en.html" property="url">
+                    <img src="https://wet-boew.github.io/themes-dist/GCWeb/GCWeb/assets/sig-blk-en.svg" alt="Government of Canada" property="logo">
+                    <span class="wb-inv"> / <span lang="en">Government of Canada</span></span></a>
+                <meta property="name" content="Government of Canada">
+                <meta property="areaServed" typeof="Country" content="Canada">
+                <link property="logo" href="/wmms-blk.svg">
+            </div>
+            <!--
+            <section id="wb-srch" class="col-lg-offset-4 col-md-offset-4 col-sm-offset-2 col-xs-12 col-sm-5 col-md-4">
+                <h2>Search</h2>
+                <form action="#" method="post" name="cse-search-box" role="search">
+                    <div class="form-group wb-srch-qry">
+                        <label for="wb-srch-q" class="wb-inv">Search Canada.ca</label>
+                        <input id="wb-srch-q" list="wb-srch-q-ac" class="wb-srch-q form-control" name="q" type="search" value="" size="34" maxlength="170"
+                            placeholder="Search Canada.ca">
+                        <datalist id="wb-srch-q-ac">
+                        </datalist>
+                    </div>
+                    <div class="form-group submit">
+                        <button type="submit" id="wb-srch-sub" class="btn btn-primary btn-small" name="wb-srch-sub"><span
+                                class="glyphicon-search glyphicon"></span><span class="wb-inv">Search</span></button>
+                    </div>
+                </form>
+            </section>
+            -->
+        </div>
+    </div>
+    <nav class="gcweb-menu" typeof="SiteNavigationElement">
+        <div class="container">
+            <h2 class="wb-inv">Menu</h2>
+            <button type="button" aria-haspopup="true" aria-expanded="false"><span class="wb-inv">Main </span>Menu <span
+                    class="expicon glyphicon glyphicon-chevron-down"></span></button>
+            <ul role="menu" aria-orientation="vertical" data-ajax-replace="https://www.canada.ca/content/dam/canada/sitemenu/sitemenu-v2-en.html">
+                <li role="presentation"><a role="menuitem" href="https://www.canada.ca/en/services/jobs.html">Jobs and the workplace</a></li>
+                <li role="presentation"><a role="menuitem" href="https://www.canada.ca/en/services/immigration-citizenship.html">Immigration and citizenship</a></li>
+                <li role="presentation"><a role="menuitem" href="https://travel.gc.ca/">Travel and tourism</a></li>
+                <li role="presentation"><a role="menuitem" href="https://www.canada.ca/en/services/business.html">Business and industry</a></li>
+                <li role="presentation"><a role="menuitem" href="https://www.canada.ca/en/services/benefits.html">Benefits</a></li>
+                <li role="presentation"><a role="menuitem" href="https://www.canada.ca/en/services/health.html">Health</a></li>
+                <li role="presentation"><a role="menuitem" href="https://www.canada.ca/en/services/taxes.html">Taxes</a></li>
+                <li role="presentation"><a role="menuitem" href="https://www.canada.ca/en/services/environment.html">Environment and natural resources</a></li>
+                <li role="presentation"><a role="menuitem" href="https://www.canada.ca/en/services/defence.html">National security and defence</a></li>
+                <li role="presentation"><a role="menuitem" href="https://www.canada.ca/en/services/culture.html">Culture, history and sport</a></li>
+                <li role="presentation"><a role="menuitem" href="https://www.canada.ca/en/services/policing.html">Policing, justice and emergencies</a></li>
+                <li role="presentation"><a role="menuitem" href="https://www.canada.ca/en/services/transport.html">Transport and infrastructure</a></li>
+                <li role="presentation"><a role="menuitem" href="https://international.gc.ca/world-monde/index.aspx?lang=eng">Canada and the world</a></li>
+                <li role="presentation"><a role="menuitem" href="https://www.canada.ca/en/services/finance.html">Money and finances</a></li>
+                <li role="presentation"><a role="menuitem" href="https://www.canada.ca/en/services/science.html">Science and innovation</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav id="wb-bc" property="breadcrumb">
+    <h2>You are here:</h2>
+    <div class="container">
+        <ol class="breadcrumb" typeof="BreadcrumbList">
+            <li property="itemListElement" typeof="ListItem">
+                <a property="item" typeof="WebPage" href="https://www.canada.ca/en.html">
+                    <span property="name">Canada.ca</span>
+                </a>
+                <meta property="position" content="1">
+            </li>
+            <li property="itemListElement" typeof="ListItem">
+                <a property="item" typeof="WebPage" href="https://natural-resources.canada.ca/home">
+                    <span property="name">Natural Resources Canada</span>
+                </a>
+                <meta property="position" content="2">
+            </li>
+            <li property="itemListElement" typeof="ListItem">
+                <a property="item" typeof="WebPage" href="https://natural-resources.canada.ca/energy-efficiency/10832">
+                    <span property="name">Energy Efficiency</span>
+                </a>
+                <meta property="position" content="3">
+            </li>
+            <li property="itemListElement" typeof="ListItem">
+                <a property="item" typeof="WebPage" href="https://natural-resources.canada.ca/energy-efficiency/products/12509">
+                    <span property="name">Energy efficiency for products</span>
+                </a>
+                <meta property="position" content="4">
+            </li>
+            <li property="itemListElement" typeof="ListItem">
+                <a property="item" typeof="WebPage" href="/">
+                    <span property="name">Searchable product list</span>
+                </a>
+                <meta property="position" content="5">
+            </li>
+        </ol>
+    </div>
+</nav>
+</header>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"
+	integrity="sha384-rY/jv8mMhqDabXSo+UCggqKtdmBfd3qC2/KvyTDNQ6PcUJXaxK1tMepoQda4g5vB" crossorigin="anonymous"></script>
+<script src="https://wet-boew.github.io/themes-dist/GCWeb/wet-boew/js/wet-boew.min.js"></script>
+<script src="https://wet-boew.github.io/themes-dist/GCWeb/GCWeb/js/theme.min.js"></script>
+<link rel="stylesheet" href="https://wet-boew.github.io/themes-dist/GCWeb/GCWeb/css/theme.min.css" />
+	
+
+	<!-- add anti-forgery token-->
+	<div id="antiforgerytoken" data-url="/_layout/tokenhtml"></div>
+
+	
+			<!-- Client Telemetry init if telemetry enabled-->
+			<script onerror="javascript:&#32;var&#32;target&#32;=&#32;event.target;&#32;var&#32;script&#32;=&#32;document.createElement(&#39;script&#39;);&#32;script.crossOrigin&#32;=&#32;target.crossOrigin;&#32;script.src&#32;=&#32;&#39;/dist/client-telemetry.bundle-f9f45b65a6.js&#39;;&#32;script.type&#32;=&#32;&#39;text/javascript&#39;;&#32;target.insertAdjacentElement(&#39;afterend&#39;,script);" src="https://content.powerapps.com/resource/powerappsportal/dist/client-telemetry.bundle-f9f45b65a6.js" type="text/javascript"></script>
+
+		
+	
+		<!-- Client Telemetry Wrapper init -->
+		<script onerror="javascript:&#32;var&#32;target&#32;=&#32;event.target;&#32;var&#32;script&#32;=&#32;document.createElement(&#39;script&#39;);&#32;script.crossOrigin&#32;=&#32;target.crossOrigin;&#32;script.src&#32;=&#32;&#39;/dist/client-telemetry-wrapper.bundle-633e70f51b.js&#39;;&#32;script.type&#32;=&#32;&#39;text/javascript&#39;;&#32;target.insertAdjacentElement(&#39;afterend&#39;,script);" src="https://content.powerapps.com/resource/powerappsportal/dist/client-telemetry-wrapper.bundle-633e70f51b.js" type="text/javascript"></script>
+
+		<script>
+			window.clientLogWrapper = new ClientLogWrapper();
+		</script>
+		<script onerror="javascript:&#32;var&#32;target&#32;=&#32;event.target;&#32;var&#32;script&#32;=&#32;document.createElement(&#39;script&#39;);&#32;script.crossOrigin&#32;=&#32;target.crossOrigin;&#32;script.src&#32;=&#32;&#39;/dist/preform.BootstrapV5.moment_2_29_4.bundle-cf8e0fd942.js&#39;;&#32;script.type&#32;=&#32;&#39;text/javascript&#39;;&#32;target.insertAdjacentElement(&#39;afterend&#39;,script);" src="https://content.powerapps.com/resource/powerappsportal/dist/preform.BootstrapV5.moment_2_29_4.bundle-cf8e0fd942.js" type="text/javascript"></script>
+
+		
+
+		<script onerror="javascript:&#32;var&#32;target&#32;=&#32;event.target;&#32;var&#32;script&#32;=&#32;document.createElement(&#39;script&#39;);&#32;script.crossOrigin&#32;=&#32;target.crossOrigin;&#32;script.src&#32;=&#32;&#39;/dist/pcf-dependency.bundle-805a1661b7.js&#39;;&#32;script.type&#32;=&#32;&#39;text/javascript&#39;;&#32;target.insertAdjacentElement(&#39;afterend&#39;,script);" src="https://content.powerapps.com/resource/powerappsportal/dist/pcf-dependency.bundle-805a1661b7.js" type="text/javascript"></script>
+
+							   <script onerror="javascript:&#32;var&#32;target&#32;=&#32;event.target;&#32;var&#32;script&#32;=&#32;document.createElement(&#39;script&#39;);&#32;script.crossOrigin&#32;=&#32;target.crossOrigin;&#32;script.src&#32;=&#32;&#39;/dist/pcf.bundle-b48d7dca38.js&#39;;&#32;script.type&#32;=&#32;&#39;text/javascript&#39;;&#32;target.insertAdjacentElement(&#39;afterend&#39;,script);" src="https://content.powerapps.com/resource/powerappsportal/dist/pcf.bundle-b48d7dca38.js" type="text/javascript"></script>
+
+							   <script onerror="javascript:&#32;var&#32;target&#32;=&#32;event.target;&#32;var&#32;script&#32;=&#32;document.createElement(&#39;script&#39;);&#32;script.crossOrigin&#32;=&#32;target.crossOrigin;&#32;script.src&#32;=&#32;&#39;/dist/pcf-extended.bundle-b0e01b5622.js&#39;;&#32;script.type&#32;=&#32;&#39;text/javascript&#39;;&#32;target.insertAdjacentElement(&#39;afterend&#39;,script);" src="https://content.powerapps.com/resource/powerappsportal/dist/pcf-extended.bundle-b0e01b5622.js" type="text/javascript"></script>
+
+						
+	<!-- Default studio template. Please do not modify -->
+<div id="mainContent" class="wrapper-body" role="main">
+    <div class="page-copy">
+      <div class="xrm-editable-html&#32;xrm-attribute"><div class="xrm-attribute-value">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="loading-spinner">
+  <div class="spinner-container">
+    <div class="spinner spinner-lg"></div>
+    <div class="loading-label">
+      
+      Loading...
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<div id="page-content" style="display:none;">
+  <div class="row sectionBlockLayout text-start" style="display: flex; flex-wrap: wrap; padding: 8px; margin: 0px;">
+    <div class="container">
+      
+
+      
+      
+      <h2 id="productName">
+        
+        Air Source Heat Pumps and Cold Climate Air Source Heat Pumps
+        
+        <small>(Total: <span id="total-records" aria-live="polite"></span>)</small>
+      </h2>
+      <p>
+        
+        
+<p>
+  As of December 15, 2023, all air source and cold climate air source heat pumps found on this list are eligible under the Oil to Heat Pump Affordability (OHPA) program.
+</p>
+<p>
+  Homeowners should ask their mechanical system contractor to include the AHRI number, along with the brand name, and the model numbers of the recommended indoor and outdoor units and furnace or air handler where applicable in the quote. This information can then be used to confirm that the quoted system is eligible.
+</p>
+<p>
+  To confirm that the specific heat pump system recommended by your mechanical system contractor is eligible under OHPA, follow these steps:
+</p>
+<ol style="margin-left:25px;">
+  <li>Enter the AHRI number in the “AHRI/Verification reference” field near the bottom of this page, then hit enter.</li>
+  <li>When you review the search results, verify that the brand name and model numbers shown in the search results match exactly the information provided by your mechanical system contractor in the quote.</li>
+</ol>
+<p>
+  <strong>All equipment must be purchased in Canada</strong>. Online purchases are only eligible if they are ordered from a distributor located in Canada.
+</p>
+<p>
+  <em>Note: for residents from British Columbia, Hybrid and Coils Only systems are not eligible.</em>
+</p>
+<p>
+  <strong>The lists are updated quarterly and were last updated on September 26, 2025.</strong>
+</p>
+<p>
+  <a href="https://www.nrcan.gc.ca/energy-efficiency/homes/canada-greener-homes-initiative/oil-heat-pump-affordability-grant/24775" target="_blank" rel="noopener">
+    Return to the Oil to Heat Pump Affordability Program Website
+  </a>
+</p>
+        
+      </p>
+      
+      <br />
+
+      
+
+      <div>
+        <a href="#" id="compare-link" class="disabled" title="You can compare up to 10 products" aria-label="Compare selected products (max 10)">
+          
+          Compare selected (max 10):<span id="selected-count">0</span>
+          
+        </a>
+        <a href="#" id="download-csv">
+          <span id="cancel-csv" title="Cancel download" style="display: none;">❌</span>
+          <span id="download-spinner" class="spinner" style="display: none;"></span>
+          <span id="download-csv-text">
+            
+            Download all (CSV)
+            
+          </span>
+        </a>
+      </div>
+    </div>
+    <p id="csv-limit-warning" style="display: none; color: #b30000; font-weight: bold; margin-top: 5px; text-align: right; margin-top: -10px; width: 100%;">
+    </p>
+    
+    
+
+    
+  </div>
+  <div class="table-container">
+    <!-- LEFT: Filters column -->
+    <div id="filters-container">
+      <button id="apply-filters" style="margin-bottom: 15px;">
+        Apply Filters
+      </button>
+      <button id="reset-filters" style="margin-bottom: 15px;">
+        Reset Filters
+      </button>
+
+      <div>
+        <input type="text" id="model-search" placeholder="Enter outside model" aria-label="Search by outside model" />
+      </div>
+      <div id="filters-loading" class="filters-loading" aria-live="polite" style="display:none;">
+        <div class="spinner spinner-lg"></div>
+        <div class="loading-text">
+          Loading filters...
+        </div>
+      </div>
+      <div class="filter-section">
+        <h3>Brand Name</h3>
+        <div class="filter-items" id="brand-filter" role="group" aria-label="Brand Name Filter">
+        </div>
+      </div>
+      <div id="dynamic-filters"></div>
+    </div>
+
+    <div class="table-scroll-wrapper">
+      <table id="tableData-table" class="table table-bordered table-striped" role="table">
+        <thead class="thead-dark">
+          <tr role="row">
+            <th scope="col">Select</th>
+            <th scope="col">
+              
+              Outside Model
+              
+            </th>
+            <th scope="col">Brand Name</th>
+            
+            
+            
+            
+            
+            
+            
+            
+            <th scope="col" data-column="spl_indoor_model_numbers" data-label="Inside model" data-type="text">
+              Inside model
+            </th>
+            
+            
+            
+            
+            
+            
+            
+            
+            <th scope="col" data-column="spl_furnace_model_number_if_applicable" data-label="Furnace model" data-type="text">
+              Furnace model
+            </th>
+            
+            
+            
+            
+            
+            
+            
+            
+            <th scope="col" data-column="spl_rated_capacity_47f" data-label="Rated heating capacity (Btu/hour)" data-type="text">
+              Rated heating capacity (Btu/hour)
+            </th>
+            
+            
+            
+            
+            
+            
+            
+            
+            <th scope="col" data-column="spl_ahri_certified_reference_number" data-label="AHRI / Verification reference" data-type="text">
+              AHRI / Verification reference
+            </th>
+            
+            
+            
+            
+            
+            
+            
+            
+            <th scope="col" data-column="spl_product_group" data-label="Product group" data-type="select">
+              Product group
+            </th>
+            
+            
+            
+            
+            
+            
+            
+            
+            <th scope="col" data-column="spl_ahri_type" data-label="AHRI Classification" data-type="select">
+              AHRI Classification
+            </th>
+            
+            
+            
+            
+            
+            
+            
+            
+            <th scope="col" data-column="spl_indoor_type_or_ducting_configuration" data-label="Indoor type/ducting configuration" data-type="select">
+              Indoor type/ducting configuration
+            </th>
+            
+          </tr>
+        </thead>
+        <tbody id="tableData-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div id="pagination" class="pagination"></div>
+
+  <div class="row sectionBlockLayout text-start" style="display: flex; flex-wrap: wrap; padding: 8px; margin: 0px;">
+    <div class="container">
+      <div class="col-lg-12 columnBlockLayout" style="flex-grow: 1; display: flex; flex-direction: column; word-break: break-word;">
+        
+        <p>Regulated products: The data provided are reported to NRCan by dealers and their certification bodies. NRCan makes no representations or
+          warranties regarding the accuracy of the data. The regulatory reporting requirement is fulfilled upon submission of an energy efficiency
+          report that complies with the requirements of Section 5 of the Energy Efficiency Act and not upon posting on this site.</p>
+        <p>The ENERGY STAR name and symbol are administered and promoted in Canada by Natural Resources Canada and are registered in Canada by the
+          United States Environmental Protection Agency.</p>
+        
+      </div>
+    </div>
+  </div>
+
+  <div id="comparison-modal" class="modal" style="display: none;" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <button class="close" id="close-modal" aria-label="Close comparison modal">
+        &times;
+      </button>
+      <h2>Compare Selected Products</h2>
+      <a id="remove-selected" class="disabled" aria-label="Remove selected products">
+        <span id="remove-selected-text">
+          Remove Selected:
+          <span id="remove-count">0</span>
+        </span>
+      </a>
+      <div id="compare-container" style="display: none;">
+        <div class="comparison-scroll-wrapper"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div></div>
+    </div>
+</div>
+
+
+	<script onerror="javascript:&#32;var&#32;target&#32;=&#32;event.target;&#32;var&#32;script&#32;=&#32;document.createElement(&#39;script&#39;);&#32;script.crossOrigin&#32;=&#32;target.crossOrigin;&#32;script.src&#32;=&#32;&#39;/dist/pcf-loader.bundle-f4a0e619b8.js&#39;;&#32;script.type&#32;=&#32;&#39;text/javascript&#39;;&#32;target.insertAdjacentElement(&#39;afterend&#39;,script);" src="https://content.powerapps.com/resource/powerappsportal/dist/pcf-loader.bundle-f4a0e619b8.js" type="text/javascript"></script>
+
+		
+		
+	
+
+	
+		<div id="pp-native-controls-react-root"></div>
+<script>window._nativeControlConfig = { "publicPath":"https://content.powerapps.com/resource/powerappsportal/controls", "versions": {"pcf_loader":"0.0.42","pcf_controls":"3.22.4","mf_shared":"0.2.23","host":"0.13.0","data_grid":"1.11.5","controls_fluent_v9":"0.0.45"} }</script>
+<script defer="defer" src="https://content.powerapps.com/resource/powerappsportal/controls/host/main.926c9ede68.chunk.js"></script>
+		
+	
+	
+		<footer id="wb-info">
+	<div class="gc-main-footer">
+		<div class="container">
+			<nav>
+				<h3>Government of Canada</h3>
+				<ul class="list-col-xs-1 list-col-sm-2 list-col-md-3">
+					<li><a href="https://www.canada.ca/en/contact.html">All contacts</a></li>
+					<li><a href="https://www.canada.ca/en/government/dept.html">Departments and agencies</a></li>
+					<li><a href="https://www.canada.ca/en/government/system.html">About government</a></li>
+				</ul>
+				<h4><span class="wb-inv">Themes and topics</span></h4>
+				<ul class="list-unstyled colcount-sm-2 colcount-md-3">
+					<li><a href="https://www.canada.ca/en/services/jobs.html">Jobs</a></li>
+					<li><a href="https://www.canada.ca/en/services/immigration-citizenship.html">Immigration and citizenship</a></li>
+					<li><a href="https://travel.gc.ca/">Travel and tourism</a></li>
+					<li><a href="https://www.canada.ca/en/services/business.html">Business</a></li>
+					<li><a href="https://www.canada.ca/en/services/benefits.html">Benefits</a></li>
+					<li><a href="https://www.canada.ca/en/services/health.html">Health</a></li>
+					<li><a href="https://www.canada.ca/en/services/taxes.html">Taxes</a></li>
+					<li><a href="https://www.canada.ca/en/services/environment.html">Environment and natural
+							resources</a></li>
+					<li><a href="https://www.canada.ca/en/services/defence.html">National security and defence</a></li>
+					<li><a href="https://www.canada.ca/en/services/culture.html">Culture, history and sport</a></li>
+					<li><a href="https://www.canada.ca/en/services/policing.html">Policing, justice and emergencies</a>
+					</li>
+					<li><a href="https://www.canada.ca/en/services/transport.html">Transport and infrastructure</a></li>
+					<li><a href="https://www.international.gc.ca/world-monde/index.aspx?lang=eng">Canada and the
+							world</a></li>
+					<li><a href="https://www.canada.ca/en/services/finance.html">Money and finance</a></li>
+					<li><a href="https://www.canada.ca/en/services/science.html">Science and innovation</a></li>
+					<li><a href="https://www.canada.ca/en/services/indigenous-peoples.html">Indigenous peoples</a></li>
+					<li><a href="https://www.canada.ca/en/services/veterans-military.html">Veterans and military</a>
+					</li>
+					<li><a href="https://www.canada.ca/en/services/youth.html">Youth</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+
+	<div class="gc-sub-footer">
+		<div class="container d-flex align-items-center">
+			<nav>
+				<h3 class="wb-inv">Government of Canada Corporate</h3>
+				<ul>
+					<li><a href="https://www.canada.ca/en/social.html">Social media</a></li>
+					<li><a href="https://www.canada.ca/en/mobile.html">Mobile applications</a></li>
+					<li><a href="https://www.canada.ca/en/government/about.html">About Canada.ca</a></li>
+					<li><a href="https://www.canada.ca/en/transparency/terms.html">Terms and conditions</a></li>
+					<li><a href="https://www.canada.ca/en/transparency/privacy.html">Privacy</a></li>
+				</ul>
+			</nav>
+			<div class="wtrmrk align-self-end">
+				<img src="https://wet-boew.github.io/themes-dist/GCWeb/GCWeb/assets/wmms-blk.svg" alt="Symbol of the Government of Canada">
+			</div>
+		</div>
+	</div>
+</footer>
+	
+
+	<script type="text/javascript">
+
+		function trackCopilotCustomUsage(botSchema) {
+			const request = {
+				botSchemaName: botSchema
+			}
+			var json = JSON.stringify(request);
+			shell.ajaxSafePost({
+				type: "POST",
+				contentType: "application/json",
+				url: "/_services/copilot/TrackUsage",
+				data: json
+			}).done(function () {
+			}).fail(function (jqXhr) {
+			});
+		}
+
+		function findAndLogCustomCopilotUsage() {
+			const pageSource = document.documentElement.outerHTML;
+			const customPvaBotWebchatRegex = /api\.(preprod\.|test\.)?powerplatform\.(com|us|cn|appsplatform\.us)\/powervirtualagents\/botsbyschema\/([^/]+)\/directline\/token/;
+			const customPvaBotIframeRegex = /powerva\.microsoft\.com\/environments\/([0-9a-fA-F\-]+)\/bots\/([^/]+)\/webchat/;
+			const omniChannelRegex = /livechatwidget\/scripts\/LiveChatBootstrapper\.js/;
+
+			const matchPvaBotWebchat = pageSource.match(customPvaBotWebchatRegex);
+			if (matchPvaBotWebchat && matchPvaBotWebchat[3]) {
+				trackCopilotCustomUsage(matchPvaBotWebchat[3]);
+			}
+
+			const matchPvaBotIframe = pageSource.match(customPvaBotIframeRegex);
+			if (matchPvaBotIframe && matchPvaBotIframe[2]) {
+				trackCopilotCustomUsage(matchPvaBotIframe[2]);
+			}
+
+			const matchOmniChannel = pageSource.match(omniChannelRegex);
+			if (matchOmniChannel && matchOmniChannel[0]) {
+				trackCopilotCustomUsage("omnichannelWidget");
+			}
+		}
+
+		window.addEventListener("load", function () {
+			findAndLogCustomCopilotUsage();
+		});
+	</script>
+
+		
+			
+			
+			
+			
+		
+	<script onerror="javascript:&#32;var&#32;target&#32;=&#32;event.target;&#32;var&#32;script&#32;=&#32;document.createElement(&#39;script&#39;);&#32;script.crossOrigin&#32;=&#32;target.crossOrigin;&#32;script.src&#32;=&#32;&#39;/dist/bootstrap.BootstrapV5.bundle-be8391e97d.js&#39;;&#32;script.type&#32;=&#32;&#39;text/javascript&#39;;&#32;target.insertAdjacentElement(&#39;afterend&#39;,script);" src="https://content.powerapps.com/resource/powerappsportal/dist/bootstrap.BootstrapV5.bundle-be8391e97d.js" type="text/javascript"></script>
+
+	<script onerror="javascript:&#32;var&#32;target&#32;=&#32;event.target;&#32;var&#32;script&#32;=&#32;document.createElement(&#39;script&#39;);&#32;script.crossOrigin&#32;=&#32;target.crossOrigin;&#32;script.src&#32;=&#32;&#39;/dist/postpreform.BootstrapV5.bundle-11a5a91493.js&#39;;&#32;script.type&#32;=&#32;&#39;text/javascript&#39;;&#32;target.insertAdjacentElement(&#39;afterend&#39;,script);" src="https://content.powerapps.com/resource/powerappsportal/dist/postpreform.BootstrapV5.bundle-11a5a91493.js" type="text/javascript"></script>
+
+	<script onerror="javascript:&#32;var&#32;target&#32;=&#32;event.target;&#32;var&#32;script&#32;=&#32;document.createElement(&#39;script&#39;);&#32;script.crossOrigin&#32;=&#32;target.crossOrigin;&#32;script.src&#32;=&#32;&#39;/dist/app.BootstrapV5.bundle-2010696351.js&#39;;&#32;script.type&#32;=&#32;&#39;text/javascript&#39;;&#32;target.insertAdjacentElement(&#39;afterend&#39;,script);" src="https://content.powerapps.com/resource/powerappsportal/dist/app.BootstrapV5.bundle-2010696351.js" type="text/javascript"></script>
+
+	<script onerror="javascript:&#32;var&#32;target&#32;=&#32;event.target;&#32;var&#32;script&#32;=&#32;document.createElement(&#39;script&#39;);&#32;script.crossOrigin&#32;=&#32;target.crossOrigin;&#32;script.src&#32;=&#32;&#39;/dist/default-1033.moment_2_29_4.bundle-eda4e638fd.js&#39;;&#32;script.type&#32;=&#32;&#39;text/javascript&#39;;&#32;target.insertAdjacentElement(&#39;afterend&#39;,script);" src="https://content.powerapps.com/resource/powerappsportal/dist/default-1033.moment_2_29_4.bundle-eda4e638fd.js" type="text/javascript"></script>
+
+	
+
+	
+	<script type="text/javascript">document.addEventListener('DOMContentLoaded', () => {
+	document.body.classList.add('page-loaded');
+
+	/* =========================
+	   CONFIG / STATE
+	========================= */
+	const pageSize = 25;
+	let currentPage = parseInt(new URLSearchParams(window.location.search).get('page')) || 1;
+	const productSegment = new URLSearchParams(window.location.search).get('product').toLowerCase();
+
+	const tableRows = Array.from(document.querySelectorAll('.table-row'));
+	const maxVisibleButtons = 7;
+	const maxCompareSelection = 10;
+
+	const modelSearchInput = document.getElementById('model-search');
+	const compareLink = document.getElementById('compare-link');
+	const compareContainer = document.getElementById('compare-container');
+	const comparisonModal = document.getElementById('comparison-modal');
+	const closeModal = document.getElementById('close-modal');
+	const removeSelectedLink = document.getElementById('remove-selected');
+	const selectedCountSpan = document.getElementById('selected-count');
+	const removeCountSpan = document.getElementById('remove-count');
+	const columnHeaders = document.querySelectorAll('#tableData-table thead th');
+	const filterContainer = document.getElementById('filters-container');
+	const applyBtn = document.getElementById('apply-filters');
+	const brandFilterElement = document.getElementById('brand-filter');
+	const csvLink = document.getElementById('download-csv-text');
+	const csvLimitWarning = document.getElementById('csv-limit-warning');
+
+	let totalRecords = 0;
+	let totalPages = 0;
+	let removeItems = [];
+	let selectedItems = [];
+	let selectedRowDataMap = {};
+	let persistedFilters = {};
+	let globalFieldLabels = [];
+	let globalHeaderLabels = [];
+	let csvFilters = {};
+
+	const lang = 'en-US';
+	const isFrench = lang.startsWith('fr-');
+
+	const toggleButton = document.createElement('button');
+	const lowerCaseHref = window.location.href.toLowerCase();
+	const isTestPage = lowerCaseHref.includes('test');
+
+	const isWindowsOrDoors = [
+		'windows',
+		'windows_rem',
+		'doors',
+		'doors_rem',
+		'doors_sgd',
+		'doors_sgd_rem',
+		'doors_gh',
+		'doors_sgd_gh',
+		'doors_sgd_me_gh',
+		'windows_gh',
+		'windows_me_gh',
+	].includes(productSegment);
+
+	const outsideModels = [
+		'ac_ss',
+		'hp.large',
+		'hp_ss',
+		'ashp2_gh',
+		'ashp1_gh',
+		'ac.splitsystemsingle',
+		'ac.splitsystemthree',
+		'ashp3_ohpa',
+		'ashp1_ohpa',
+		'ashp2_ohpa',
+		'ac.large',
+		'hp.splitsystemthree',
+		'hp.splitsystemsingle',
+		'ashp4_ohpa',
+	];
+
+	const isUAT = lowerCaseHref.includes('-uat');
+	const isTestOrUAT = lowerCaseHref.includes('test') || isUAT;
+
+	const isAshpOhpaFr = isFrench && /^ashp[1-4]_ohpa$/.test(productSegment);
+
+	const isProdTest =
+		lowerCaseHref.includes('oee-spl.powerappsportals.com/en-us/test_product_api') ||
+		lowerCaseHref.includes('oee-spl.powerappsportals.com/fr-fr/test_product_api') ||
+		lowerCaseHref.includes('spl-lpi.nrcan-rncan.gc.ca/en-us/test_product_api') ||
+		lowerCaseHref.includes('spl-lpi.nrcan-rncan.gc.ca/fr-fr/test_product_api');
+
+	const isBlankOrDash = (v) => v == null || String(v).trim() === '' || String(v).trim() === '-';
+
+	/* =========================
+	   REQUEST MANAGER + CACHE
+	========================= */
+	let currentGen = 0;
+	let inflight = new Set();
+
+	function newController() {
+		const ctrl = new AbortController();
+		inflight.add(ctrl);
+		return ctrl;
+	}
+	function cancelInflight() {
+		inflight.forEach((c) => c.abort());
+		inflight.clear();
+		currentGen++;
+	}
+
+	function labelsCacheKey(product, lang) {
+		return `SPL_FIELD_LABELS:${product}:${lang}`;
+	}
+	function saveLabelsToCache(product, lang, payload) {
+		try {
+			sessionStorage.setItem(labelsCacheKey(product, lang), JSON.stringify(payload));
+		} catch {}
+	}
+	function readLabelsFromCache(product, lang) {
+		try {
+			const raw = sessionStorage.getItem(labelsCacheKey(product, lang));
+			return raw ? JSON.parse(raw) : null;
+		} catch {
+			return null;
+		}
+	}
+
+	/* =========================
+	   UI HELPERS
+	========================= */
+	function toggleLoading(show = true) {
+		document.getElementById('loading-spinner').style.display = show ? 'flex' : 'none';
+		document.getElementById('page-content').style.display = show ? 'none' : 'block';
+	}
+	function hideDataSections(hideFilters = true) {
+		document.querySelector('#tableData-table thead').style.display = 'none';
+		if (hideFilters) document.getElementById('filters-container').style.display = 'none';
+		document.getElementById('compare-link')?.classList.add('hidden');
+		csvLink?.classList.add('hidden');
+
+		const pagination = document.getElementById('pagination');
+		if (pagination) {
+			pagination.innerHTML = '';
+			pagination.style.display = 'none';
+		}
+	}
+	function setButtonLoading(
+		btn,
+		isLoading,
+		loadingText = isFrench ? 'Chargement...' : 'Loading...',
+		defaultText = isFrench ? 'Appliquez les filtres' : 'Apply Filters',
+	) {
+		btn.disabled = isLoading;
+		btn.textContent = isLoading ? loadingText : defaultText;
+	}
+	function showError(message = 'Something went wrong. Please try again.') {
+		const existing = document.getElementById('error-toast');
+		if (existing) existing.remove();
+		const toast = document.createElement('div');
+		toast.id = 'error-toast';
+		toast.innerText = message;
+		toast.setAttribute('role', 'alert');
+		toast.setAttribute('aria-live', 'polite');
+		Object.assign(toast.style, {
+			position: 'fixed',
+			bottom: '20px',
+			left: '50%',
+			transform: 'translateX(-50%)',
+			backgroundColor: '#dc3545',
+			color: '#fff',
+			padding: '10px 20px',
+			borderRadius: '5px',
+			boxShadow: '0 2px 6px rgba(0,0,0,0.2)',
+			zIndex: 9999,
+			transition: 'opacity 0.3s ease-in-out',
+		});
+		document.body.appendChild(toast);
+		setTimeout(() => {
+			toast.style.opacity = '0';
+			setTimeout(() => toast.remove(), 300);
+		}, 3000);
+	}
+
+	/* =========================
+	   TOGGLE FILTERS BUTTON
+	========================= */
+	toggleButton.id = 'toggle-filters';
+	toggleButton.innerText = 'Filters';
+	toggleButton.setAttribute('aria-label', 'Toggle filters visibility');
+	toggleButton.setAttribute('aria-expanded', 'false');
+	document.body.appendChild(toggleButton);
+	toggleButton.addEventListener('click', function () {
+		const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
+		toggleButton.setAttribute('aria-expanded', !isExpanded);
+		filterContainer.classList.toggle('active');
+	});
+
+	/* =========================
+	   LABEL + HEADER MAPPERS
+	========================= */
+	function getFieldLabel(fieldname, code) {
+		const labels = Array.isArray(globalFieldLabels) ? globalFieldLabels : [];
+		if (labels.length === 0) return code ?? '';
+
+		const rawField = (fieldname || '').toLowerCase().replace(/^spl_/, '');
+		const normalizedCode =
+			code === true || code === 'true' ? '1' : code === false || code === 'false' ? '0' : String(code ?? '');
+
+		const match = labels.find((l) => l.fieldname?.toLowerCase() === rawField && l.code === normalizedCode);
+		return match?.weblabel ?? code ?? '';
+	}
+	function getHeaderLabel(fieldname) {
+		if (!fieldname) return fieldname;
+		const headers = Array.isArray(globalHeaderLabels) ? globalHeaderLabels : [];
+		if (headers.length === 0) return fieldname;
+		const normalized = fieldname.trim().toLowerCase();
+		const match = headers.find((h) => h.fieldname?.trim().toLowerCase() === normalized);
+		if (isTestOrUAT) console.log('getHeaderLabel(fieldname) match:', match?.label || fieldname);
+		return match?.label || fieldname;
+	}
+
+	function tryHydrateRenderedLabels() {
+		if (!Array.isArray(globalFieldLabels) || globalFieldLabels.length === 0) return;
+
+		// Header relabel
+		document.querySelectorAll('#tableData-table thead th[data-column]').forEach((th) => {
+			const raw = th.getAttribute('data-column')?.replace(/^spl_/, '') || '';
+			const nice = getHeaderLabel(raw) || th.textContent.trim();
+			th.textContent = nice;
+			th.setAttribute('data-label', nice);
+		});
+
+		// Cell value relabel
+		document.querySelectorAll('#tableData-body td[data-column]').forEach((td) => {
+			const col = td.getAttribute('data-column') || '';
+			const normalized = col.replace(/^spl_/, '').toLowerCase();
+			const raw = td.getAttribute('data-original');
+			const pretty = getFieldLabel(normalized, raw) || td.textContent;
+			td.textContent = pretty;
+			td.setAttribute('data-label', pretty);
+		});
+		if (isTestOrUAT) console.log('Hydration pass complete');
+	}
+
+	/* =========================
+	   FETCH HELPERS (with Abort)
+	========================= */
+	async function fetchFieldLabels() {
+		const cached = readLabelsFromCache(productSegment, lang);
+		if (cached) {
+			if (isTestOrUAT) console.log('fetchFieldLabels(): using cached labels for', productSegment, lang);
+			return cached;
+		}
+
+		if (isTestOrUAT)
+			console.log(
+				'fetchFieldLabels():',
+				isProdTest,
+				'Fetching field labels for product:',
+				productSegment,
+				'lang:',
+				lang,
+			);
+
+		const ctrl = newController();
+		try {
+			const url = isProdTest
+				? 'https://bbaf081944c6ec4c89b9863ca65aaa.f0.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/d3a4351895ad4a3d8d1a49f504fec466/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=0hKpOSlBeh-T5cCq0uWIWMCddrzxU5pixMTnYzI-WQ4'
+				: isUAT
+				? 'https://3a7f4a9069bde8edbcbbf2f3f76b70.f4.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/7b5be3b53fd5496f8a19a871e9a12777/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=6wDTm2brVJQs6l_HX23MJb0uBBn4BUjRKHKs0GHNY6Q'
+				: 'https://bbaf081944c6ec4c89b9863ca65aaa.f0.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/7fc53b29726344ce811879ab742cd89d/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=p55QbdKmcnQTq087txiPLZFGoiTwksvpkx1iG529Qdk';
+
+			const res = await fetch(url, {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({ product: productSegment, lang }),
+				signal: ctrl.signal,
+			});
+			if (!res.ok) throw new Error(await res.text());
+			const json = await res.json();
+
+			if (isTestOrUAT) console.log('Fetched field labels:', json);
+
+			saveLabelsToCache(productSegment, lang, json);
+			return json;
+		} catch (e) {
+			if (isTestOrUAT) console.error('Field labels error:', e);
+			return { fieldLabels: [], headerLabels: [] };
+		} finally {
+			inflight.delete(ctrl);
+		}
+	}
+
+	async function fetchRecords(page = 1, forceEmpty = false) {
+		if (!productSegment) {
+			toggleLoading(false);
+			hideDataSections();
+			return;
+		}
+
+		const filters = forceEmpty ? {} : persistedFilters;
+		if (isTestPage) {
+			console.log('fetchRecords(): using persisted filters:', filters);
+		}
+
+		csvFilters = filters;
+
+		const windowsDoorsRecordAPI =
+			'https://bbaf081944c6ec4c89b9863ca65aaa.f0.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/a1bfecd717574429908e60dceed0edd5/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=8VqM8WCtUu3c91LAAPehAUoGRujcnfpy6nWSdmK_Btg';
+
+		const defaultRecordAPI = isProdTest
+			? 'https://bbaf081944c6ec4c89b9863ca65aaa.f0.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/3f9c7a0a39e64644935bbf8f6940665a/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=0qb_xJkeLmN9ZcN-uY5iroGKXQMYRhNYQUscffr9-ak'
+			: isUAT
+			? 'https://3a7f4a9069bde8edbcbbf2f3f76b70.f4.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/2d36e7ba9f0d40b2bfda9580af8349ff/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=GLQLEjRj77Gwfb7mqRDqfHNh6j7r29Ik9dfvg33VnCo'
+			: 'https://bbaf081944c6ec4c89b9863ca65aaa.f0.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/4a703a168daa4c4bb3d3e246a1625004/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=gRVl8uzqyGkyp8jPfemCdudqAxYjmhF1H-AVsROhuPc';
+
+		const windowsDoorsProdAPI =
+			'https://bbaf081944c6ec4c89b9863ca65aaa.f0.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/3eb423bd59ed41678c07f232d4fc6c98/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=YM7NhRZhRvFn2PEQuNKseMLNB7up9g1wTAm8wVWzEXQ';
+
+		const apiURL =
+			isWindowsOrDoors && !isTestOrUAT
+				? windowsDoorsProdAPI
+				: isWindowsOrDoors
+				? windowsDoorsRecordAPI
+				: defaultRecordAPI;
+
+		if (isTestOrUAT) console.log('fetchRecords(): page', page, 'apiURL:', apiURL);
+
+		const ctrl = newController();
+		const response = await fetch(apiURL, {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({ product: productSegment, page, pageSize, filters }),
+			signal: ctrl.signal,
+		}).catch((err) => {
+			if (err.name !== 'AbortError') console.error('Fetch error:', err);
+		});
+		inflight.delete(ctrl);
+
+		if (!response || !response.ok) {
+			if (response) console.error('Fetch error:', await response.text());
+			hideDataSections();
+			return;
+		}
+
+		let result;
+		try {
+			result = await response.json();
+			if (isTestOrUAT)
+				console.log('fetchRecords(): received', result?.data?.length || 0, 'rows, total:', result?.total);
+		} catch (err) {
+			console.error('Invalid JSON response', err);
+			showError('Failed to parse response.');
+			return;
+		}
+
+		if (result.total === 0 || !result.data || result.data.length === 0) {
+			const message = isFrench ? 'Aucun document trouvé.' : 'No records found.';
+			const resetLabel = isFrench ? 'Réinitialiser les filtres' : 'Reset Filters';
+
+			document.getElementById('tableData-body').innerHTML = `
+				<tr>
+					<td><button id="reset-filters" style="width: 150px;">${resetLabel}</button></td>
+					<td colspan="${columnHeaders.length - 1}">${message}</td>
+				</tr>
+			`;
+
+			updateTotalCount(0);
+			updatePaginationLinks();
+			updateActivePaginationButton(1);
+			updateURLPageParam(1);
+			hideDataSections(false);
+			return;
+		}
+
+		renderTable(result.data);
+		csvLink.disabled = false;
+		csvLink.classList.remove('disabled');
+
+		updateTotalCount(result.total);
+		totalRecords = result.total;
+		currentPage = page;
+		totalPages = Math.ceil(result.total / pageSize);
+		updatePaginationLinks();
+		updateActivePaginationButton(currentPage);
+		updateURLPageParam(page);
+
+		return true;
+	}
+
+	function setFiltersLoading(isLoading) {
+		const loader = document.getElementById('filters-loading');
+		const brand = document.querySelector('.filter-section'); // Brand Name block
+		const dyn = document.getElementById('dynamic-filters');
+
+		if (!loader || !brand || !dyn) return;
+
+		loader.style.display = isLoading ? 'flex' : 'none';
+
+		if (isLoading) {
+			// hide both Brand + Dynamic sections
+			brand.classList.add('filters-hidden');
+			dyn.classList.add('filters-hidden');
+		} else {
+			// show them again once filters load
+			brand.classList.remove('filters-hidden');
+			dyn.classList.remove('filters-hidden');
+		}
+	}
+
+	async function fetchFilters(forceEmpty = false) {
+		if (!productSegment) {
+			hideDataSections();
+			toggleLoading(false);
+			return;
+		}
+
+		const filters = getCurrentFilters(forceEmpty);
+		if (isTestPage) console.log('Filters sent to fetchFilters API:', filters);
+		setFiltersLoading(true);
+
+		const windowsDoorsProdFilterAPI =
+			'https://bbaf081944c6ec4c89b9863ca65aaa.f0.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/6a0dabb72e7342a5b05dbd48ff3f10b1/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=guZOoFs4gY0MNwmcWk0mwB-8LmlSBIiks1BgzvS831A';
+
+		const windowsDoorsFilterAPI =
+			'https://bbaf081944c6ec4c89b9863ca65aaa.f0.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/b341c283c60346dcb688d5e81be24dda/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=i-7SkBZwKB6DKpDh0x21NGqCxccQPwbEaRNleyFOslU';
+
+		const defaultFilterAPI = isProdTest
+			? 'https://bbaf081944c6ec4c89b9863ca65aaa.f0.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/16a0087216c4484e8bd8a2fabf4ebc6a/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=IphFaSRveifYigPPcjAmaLakF_9IgFrOVlXiPiTDkZU'
+			: isUAT
+			? 'https://3a7f4a9069bde8edbcbbf2f3f76b70.f4.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/5a945455e4ab47a3ac7166d69b430cbc/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=UxdOrKjpRjWiLbD6fUmcKiw66Jh5-9b1_aWjCalnDKw'
+			: 'https://bbaf081944c6ec4c89b9863ca65aaa.f0.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/958e275841b64ec38d337884267a695f/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=baZxPG1e_m6DDQNfOdJUD2ZL67aR59ZkCgkMW0PrcbY';
+
+		const apiURL =
+			isWindowsOrDoors && !isTestOrUAT
+				? windowsDoorsProdFilterAPI
+				: isWindowsOrDoors
+				? windowsDoorsFilterAPI
+				: defaultFilterAPI;
+
+		if (isTestOrUAT) console.log('fetchFilters(): apiURL', apiURL);
+
+		const ctrl = newController();
+		try {
+			const response = await fetch(apiURL, {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({ product: productSegment, filters, lang }),
+				signal: ctrl.signal,
+			});
+			if (!response.ok) {
+				const errorText = await response.text();
+				if (isTestOrUAT) {
+					console.error('Fetch error:', errorText);
+					showError('Filter API failed to respond. Please try again later.');
+				}
+				hideDataSections(true);
+				return;
+			}
+			const data = await response.json();
+			if (isTestOrUAT) console.log('fetchFilters(): received filter fields:', data?.length || 0);
+			renderDynamicFilters(data);
+			hydrateFilterInputsFromPersisted();
+			applyBtn.disabled = false;
+			return true;
+		} catch (err) {
+			if (err.name !== 'AbortError') {
+				setFiltersLoading(false);
+				if (isTestOrUAT) {
+					console.error('Exception while fetching filters:', err);
+					showError('Unable to load filters. Please check your connection or try again later.');
+				}
+				hideDataS;
+				document.getElementById('filters-container').style.display = 'block';
+			}
+		} finally {
+			inflight.delete(ctrl);
+		}
+	}
+
+	/* =========================
+	   TABLE RENDER
+	========================= */
+	function renderTable(data) {
+		const tbody = document.getElementById('tableData-body');
+		tbody.innerHTML = '';
+
+		data.forEach((item) => {
+			const modelId = item.ExternalPrimaryKey;
+			const detailPage = window.location.href.toLowerCase().includes('test') ? 'TEST_Detail' : 'details';
+
+			let rowHTML = `
+				<td style="max-width: 83px;">
+					<input type="checkbox" class="compare-checkbox" data-model="${item.ExternalPrimaryKey}" aria-label="Select ${
+				item.ModelNumber || item.Modelnumber
+			}" ${selectedItems.includes(item.ExternalPrimaryKey) ? 'checked' : ''} />
+				</td>
+				<td style="max-width: 180px; word-wrap: break-word;">
+					<a href="/${detailPage}/?product=${productSegment}&id=${
+				item.ExternalPrimaryKey
+			}" target="_blank" rel="noopener noreferrer" aria-label="View details for model ${item.ModelNumber}">
+						${item.ModelNumber || item.Modelnumber || '-'}
+					</a>
+				</td>
+				<td>${getFieldLabel('BrandName', item.BrandName, lang) || item.BrandName || '-'}</td>
+			`;
+
+			if (selectedItems.includes(modelId)) {
+				const existing = selectedRowDataMap[modelId];
+				if (!existing) {
+					const tempRow = document.createElement('tr');
+					tempRow.innerHTML = rowHTML;
+					selectedRowDataMap[modelId] = item;
+				}
+			}
+
+			const row = document.createElement('tr');
+			row.classList.add('table-row');
+			row.setAttribute('data-brand', item.BrandName || '');
+
+			// Dynamic columns
+			columnHeaders.forEach((header) => {
+				const columnName = header.getAttribute('data-column');
+				if (!columnName || ['spl_modelnumber', 'spl_brandname'].includes(columnName)) return;
+
+				const normalizedField = columnName.replace(/^spl_/, '').toLowerCase();
+				let lookupField = normalizedField;
+
+				if (isAshpOhpaFr && normalizedField === 'indoor_type_or_ducting_configuration') {
+					lookupField = 'type_interieur_ou_configuration_des_conduits';
+				}
+				const apiKey = Object.keys(item).find((key) => key.toLowerCase() === lookupField);
+				const rawValue = apiKey ? item[apiKey] : '';
+				const displayValue = getFieldLabel(normalizedField, rawValue, lang) || rawValue || '-';
+
+				rowHTML += `<td data-column="${columnName}" data-label="${displayValue}" data-original="${rawValue}">${displayValue}</td>`;
+			});
+
+			row.innerHTML = rowHTML;
+			tbody.appendChild(row);
+		});
+
+		document.getElementById('compare-link')?.classList.remove('hidden');
+		csvLink?.classList.remove('hidden');
+		document.querySelector('#tableData-table thead').style.display = 'table-header-group';
+		document.getElementById('filters-container').style.display = 'block';
+
+		tryHydrateRenderedLabels();
+	}
+
+	/* =========================
+	   SELECTION / COMPARE
+	========================= */
+	document.getElementById('tableData-body').addEventListener('change', function (e) {
+		if (!e.target.classList.contains('compare-checkbox')) return;
+		const checkbox = e.target;
+		const modelId = checkbox.dataset.model;
+
+		if (checkbox.checked) {
+			if (!selectedItems.includes(modelId)) {
+				if (selectedItems.length < maxCompareSelection) {
+					selectedItems.push(modelId);
+					if (!selectedRowDataMap[modelId]) {
+						const rowData = getRowDataFromDOM(checkbox.closest('tr'));
+						if (rowData) selectedRowDataMap[modelId] = rowData;
+					}
+				} else {
+					checkbox.checked = false;
+					alert(`You can select up to ${maxCompareSelection} products.`);
+				}
+			}
+		} else {
+			selectedItems = selectedItems.filter((id) => id !== modelId);
+			delete selectedRowDataMap[modelId];
+		}
+		updateCompareLink();
+		updateSelectedCount();
+	});
+
+	function updateTotalCount(total) {
+		document.getElementById('total-records').textContent = total.toLocaleString();
+	}
+	function updateURLPageParam(page) {
+		const url = new URL(window.location);
+		url.searchParams.set('page', page);
+		window.history.replaceState({}, '', url);
+	}
+	let filtersData = {};
+
+	function renderDynamicFilters(filtersDataArray) {
+		const container = document.getElementById('dynamic-filters');
+		container.innerHTML = '';
+
+		filtersDataArray.forEach((field) => {
+			const { field: fieldname, type, values, min, max } = field;
+
+			if (fieldname === 'BrandName') {
+				populateFilter(brandFilterElement, extractBrandCounts(values));
+				return;
+			}
+
+			const isIndoorConfig = isAshpOhpaFr && String(fieldname).toLowerCase() === 'indoor_type_or_ducting_configuration';
+			const valueLabelField = isIndoorConfig ? 'type_interieur_ou_configuration_des_conduits' : fieldname;
+
+			const section = document.createElement('div');
+			section.classList.add('filter-section');
+
+			const h3 = document.createElement('h3');
+			h3.textContent = getHeaderLabel(fieldname);
+			section.appendChild(h3);
+
+			if (type === 'range') {
+				const input = document.createElement('input');
+				input.type = 'range';
+				input.name = fieldname;
+				input.min = min;
+				input.max = max;
+
+				const range = max - min;
+				const steps = range <= 1 ? 8 : 10;
+				let preciseStep = parseFloat((range / steps).toFixed(8));
+				input.step = persistedFilters[fieldname]?.step || preciseStep;
+				input.value = persistedFilters[fieldname]?.value ?? max;
+
+				if (parseFloat(input.value) !== max) {
+					const multiples = Math.round(range / preciseStep);
+					let last = min + multiples * preciseStep;
+					if (last > max + 1e-8) last = min + (multiples - 1) * preciseStep;
+					input.value = parseFloat(last.toFixed(8)).toString();
+				}
+
+				const span = document.createElement('span');
+				span.textContent = input.value;
+				input.addEventListener('input', () => {
+					span.textContent = input.value;
+				});
+
+				section.appendChild(input);
+				section.appendChild(span);
+			} else if (type === 'select' || type === 'multiSelect') {
+				const list = (values?.ResultSets?.Table1 || []).filter((it) => !isBlankOrDash(it.Value));
+
+				if (type === 'select') {
+					const select = document.createElement('select');
+					select.name = fieldname;
+					select.value = persistedFilters[fieldname]?.value || '';
+
+					const defaultOpt = document.createElement('option');
+					defaultOpt.value = '';
+					defaultOpt.textContent = `Select ${getHeaderLabel(fieldname)}`;
+					select.appendChild(defaultOpt);
+
+					list.forEach((item) => {
+						const opt = document.createElement('option');
+						opt.value = item.Value;
+						opt.textContent = `${getFieldLabel(valueLabelField, item.Value, lang)} (${item.Count})`;
+						select.appendChild(opt);
+					});
+					section.appendChild(select);
+				} else {
+					const wrapper = document.createElement('div');
+					wrapper.classList.add('filter-items');
+					list.forEach((item) => {
+						const lab = document.createElement('label');
+						const checkbox = document.createElement('input');
+						checkbox.type = 'checkbox';
+						checkbox.name = fieldname;
+						checkbox.value = item.Value;
+						if (persistedFilters[fieldname]?.value?.includes(item.Value)) checkbox.checked = true;
+						const displayLabel = getFieldLabel(valueLabelField, item.Value, lang);
+						lab.appendChild(checkbox);
+						lab.appendChild(document.createTextNode(` ${displayLabel} (${item.Count})`));
+						wrapper.appendChild(lab);
+					});
+					section.appendChild(wrapper);
+				}
+			} else {
+				const input = document.createElement('input');
+				input.type = 'text';
+				input.name = fieldname;
+				input.placeholder = `Enter ${getHeaderLabel(fieldname)}`;
+				section.appendChild(input);
+			}
+			setFiltersLoading(false);
+			container.appendChild(section);
+		});
+	}
+
+	function extractBrandCounts(values) {
+		const counts = {};
+		const list = values?.ResultSets?.Table1 || [];
+		list.forEach((item) => {
+			counts[item.Value] = item.Count;
+		});
+		return counts;
+	}
+
+	// Init filtersData keys from headers
+	columnHeaders.forEach((header) => {
+		const columnName = header.getAttribute('data-column');
+		const columnType = header.getAttribute('data-type');
+		const columnLabel = header.getAttribute('data-label');
+		if (columnName) filtersData[columnName] = { values: new Set(), type: columnType, label: columnLabel };
+	});
+
+	// Collect unique values from server-rendered rows (if any)
+	tableRows.forEach((row) => {
+		columnHeaders.forEach((header) => {
+			const columnName = header.getAttribute('data-column');
+			const cell = row.querySelector(`td[data-column="${columnName}"]`);
+			if (cell) filtersData[columnName].values.add(cell.textContent.trim());
+		});
+	});
+
+	function updateSelectedCount() {
+		selectedCountSpan.textContent = `${selectedItems.length}`;
+	}
+	function updateRemoveCount() {
+		removeCountSpan.textContent = `${removeItems.length}`;
+	}
+
+	function updateCompareLink() {
+		if (selectedItems.length < 2 || selectedItems.length > maxCompareSelection) {
+			compareLink.classList.add('disabled');
+			compareLink.classList.remove('enabled');
+		} else {
+			compareLink.classList.add('enabled');
+			compareLink.classList.remove('disabled');
+		}
+	}
+
+	let removeItemsLocal = [];
+	function updateRemoveUI() {
+		const checkedRemoveCheckboxes = document.querySelectorAll('.remove-checkbox:checked');
+		removeItemsLocal = Array.from(checkedRemoveCheckboxes).map((checkbox) => checkbox.dataset.id);
+		removeCountSpan.textContent = `${removeItemsLocal.length}`;
+		if (removeItemsLocal.length === 0) removeSelectedLink.classList.add('disabled');
+		else removeSelectedLink.classList.remove('disabled');
+	}
+
+	document.addEventListener('change', function (event) {
+		if (event.target.classList.contains('remove-checkbox')) updateRemoveUI();
+	});
+
+	compareLink.addEventListener('click', function () {
+		comparisonModal.style.display = 'block';
+
+		const headers = Array.from(document.querySelectorAll('#tableData-table thead th'))
+			.slice(3)
+			.map((header) => ({
+				name: header.getAttribute('data-column'),
+				label: header.getAttribute('data-label') || header.textContent.trim(),
+			}))
+			.filter((header) => header.name);
+
+		const selectedRows = selectedItems.map((modelId) => selectedRowDataMap[modelId]).filter(Boolean);
+		if (selectedRows.length === 0) {
+			compareContainer.innerHTML = '<p>No items selected.</p>';
+			compareContainer.style.display = 'block';
+			return;
+		}
+
+		let comparisonTable = `
+			<table class="table table-bordered table-striped">
+				<thead>
+					<tr>
+						<th>${isFrench ? 'Sélectionner' : 'Select'}</th>
+						${selectedItems
+							.map((modelId) => `<th><input type="checkbox" class="remove-checkbox" data-id="${modelId}"></th>`)
+							.join('')}
+					</tr>
+					<tr>
+						<th>${
+							isFrench
+								? outsideModels.includes(productSegment)
+									? 'Modèle extérieur'
+									: 'Numéro de modèle'
+								: outsideModels.includes(productSegment)
+								? 'Outside Model'
+								: 'Model Number'
+						}</th>
+						${selectedRows.map((row) => `<td>${row?.ModelNumber || '-'}</td>`).join('')}
+					</tr>
+					<tr>
+						<th>${isFrench ? 'Nom de marque' : 'Brand Name'}</th>
+						${selectedRows.map((row) => `<td>${row?.BrandName || '-'}</td>`).join('')}
+					</tr>
+				</thead>
+				<tbody>
+					${headers
+						.map(
+							(header) => `
+						<tr>
+							<td><strong>${header.label}</strong></td>
+							${selectedRows
+								.map((row) => {
+									let headerField = header.name.replace(/^spl_/, '').toLowerCase();
+									const key = Object.keys(row).find((k) => k.toLowerCase() === headerField);
+									const value = key ? row[key] : '-';
+									return `<td>${value}</td>`;
+								})
+								.join('')}
+						</tr>
+					`,
+						)
+						.join('')}
+				</tbody>
+			</table>
+		`;
+
+		compareContainer.style.display = 'block';
+		const scrollWrapper = compareContainer.querySelector('.comparison-scroll-wrapper');
+		if (scrollWrapper) scrollWrapper.innerHTML = comparisonTable;
+		else compareContainer.innerHTML = comparisonTable;
+
+		setTimeout(updateRemoveUI, 100);
+	});
+
+	removeSelectedLink.addEventListener('click', function () {
+		if (removeItemsLocal.length === 0) return;
+
+		selectedItems = selectedItems.filter((model) => !removeItemsLocal.includes(model));
+		removeItemsLocal.forEach((model) => {
+			delete selectedRowDataMap[model];
+			const mainCheckbox = document.querySelector(`.compare-checkbox[data-model="${model}"]`);
+			if (mainCheckbox) mainCheckbox.checked = false;
+		});
+
+		removeItemsLocal = [];
+
+		if (selectedItems.length <= 1) {
+			comparisonModal.style.display = 'none';
+			updateRemoveUI();
+			updateSelectedCount();
+			updateCompareLink();
+			return;
+		}
+		compareLink.click();
+		updateRemoveUI();
+		updateSelectedCount();
+		updateCompareLink();
+	});
+
+	closeModal.addEventListener('click', function () {
+		comparisonModal.style.display = 'none';
+		removeItemsLocal = [];
+	});
+	window.addEventListener('click', function (event) {
+		if (event.target === comparisonModal) {
+			comparisonModal.style.display = 'none';
+			removeItemsLocal = [];
+		}
+	});
+
+	/* =========================
+	   CSV DOWNLOAD
+	========================= */
+	csvLink.addEventListener('click', async (e) => {
+		if (isTestPage) {
+			console.log('Filters sent to csvLink.addEventListener API:', csvFilters);
+		}
+
+		const spinner = document.getElementById('download-spinner');
+		const cancelButton = document.getElementById('cancel-csv');
+
+		csvLimitWarning.style.display = 'none';
+
+		if (totalRecords > 1048576) {
+			e.preventDefault();
+			csvLimitWarning.textContent = lang.startsWith('fr-')
+				? 'Excel ne peut pas afficher plus d’un million de lignes. Veuillez ajuster les filtres pour télécharger un maximum d’un million de lignes.'
+				: 'Excel cannot display more than 1 million rows. Please adjust the filters to download up to 1 million rows.';
+			csvLimitWarning.style.display = 'block';
+			return;
+		}
+
+		e.preventDefault();
+		spinner.style.display = 'inline-block';
+		csvLink.style.pointerEvents = 'none';
+		csvLink.style.opacity = '0.6';
+		csvLink.textContent = isFrench ? 'Téléchargement...' : 'Downloading...';
+		csvLink.setAttribute('title', csvLink.textContent);
+		cancelButton.style.display = 'inline-block';
+
+		let cancelDownload = false;
+		const controller = new AbortController();
+		const signal = controller.signal;
+
+		cancelButton.onclick = () => {
+			controller.abort();
+			cancelDownload = true;
+			csvLink.textContent = isFrench ? 'Annulé' : 'Cancelled';
+			cancelButton.style.display = 'none';
+		};
+
+		try {
+			const windowsDoorsProdCSVAPI =
+				'https://bbaf081944c6ec4c89b9863ca65aaa.f0.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/106fbd235714480ebcaec9d4916f121d/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=1EG-9kZzWYWRaqA-YK_CdD1JXPLvvAUfWDKeuBa1YAA';
+			const windowsDoorsCSVAPI =
+				'https://bbaf081944c6ec4c89b9863ca65aaa.f0.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/149afcaf5e394d1c9f6eeabe9cef22fc/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=QH2B8bMCffc3JhgRKQBGDOozaNwGnnVUld_x_LBF-C0';
+
+			const defaultCSVAPI = isProdTest
+				? 'https://bbaf081944c6ec4c89b9863ca65aaa.f0.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/ab3ed82ff65b4fe78af028eeb74fce5b/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=1X1u5NWAszU05888fWhvIhjUiWmBAmeSV7f8YKhleo0'
+				: isUAT
+				? 'https://3a7f4a9069bde8edbcbbf2f3f76b70.f4.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/548e1f7866de45b79a61f335172e74f8/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=UZI0nAi-10rcOEToB5iS_xyw-mzWRdPP4_hD4EYHRBQ'
+				: 'https://bbaf081944c6ec4c89b9863ca65aaa.f0.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/454e5709322d4ee98060990f6a2610a3/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=IoNeq6ntJbEKCaDgRXMcN_isWY48arviGMy-qSXA-2w';
+
+			const apiURL =
+				isWindowsOrDoors && !isTestOrUAT
+					? windowsDoorsProdCSVAPI
+					: isWindowsOrDoors
+					? windowsDoorsCSVAPI
+					: defaultCSVAPI;
+
+			const take = 100000;
+			let skip = 0;
+			let hasMore = true;
+			const allRows = [];
+
+			while (hasMore && !cancelDownload) {
+				const response = await fetch(apiURL, {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify({ product: productSegment, lang, skip, take, filters: csvFilters }),
+					signal,
+				});
+				const data = await response.json();
+				const rows = data.data || [];
+				allRows.push(...rows);
+
+				hasMore = rows.length === take;
+				skip += take;
+
+				if (skip % 10000 === 0 || !hasMore) {
+					const countFormatted =
+						skip >= 1_000_000
+							? `${(skip / 1_000_000).toFixed(1)}M`
+							: skip >= 1000
+							? `${(skip / 1000).toFixed(0)}K`
+							: skip.toString();
+					csvLink.textContent = isFrench
+						? `Téléchargement (${countFormatted})...`
+						: `Downloading (${countFormatted})...`;
+				}
+			}
+
+			if (cancelDownload || allRows.length === 0) return;
+
+			const productName = (productSegment || 'Product').replace(/\s+/g, '_');
+			const dateStr = new Date().toISOString().split('T')[0];
+			const formattedTotal = allRows.length.toLocaleString();
+
+			const labelMap = new Map();
+			if (Array.isArray(globalFieldLabels) && globalFieldLabels.length > 0) {
+				globalFieldLabels.forEach((item) => {
+					const field = item.fieldname.toLowerCase();
+					const code = item.code;
+					const label = item.weblabel;
+					if (!labelMap.has(field)) labelMap.set(field, new Map());
+					labelMap.get(field).set(code, label);
+				});
+			}
+
+			const fieldKeys = Object.keys(allRows[0] || {});
+			const csvRows = [
+				fieldKeys
+					.map((key) => {
+						const lowerKey = key.toLowerCase();
+						if (lowerKey === 'brandname') return isFrench ? 'Nom de marque' : 'Brand Name';
+						if (lowerKey === 'modelnumber') {
+							if (isTestOrUAT) console.log(outsideModels, lowerKey);
+							return outsideModels.includes(productSegment)
+								? isFrench
+									? 'Modèle extérieur'
+									: 'Outside Model'
+								: isFrench
+								? 'Numéro de modèle'
+								: 'Model Number';
+						}
+						return getHeaderLabel(key);
+					})
+					.join(','),
+				...allRows.map((row) =>
+					fieldKeys
+						.map((key) => {
+							const rawValue = row[key];
+							const labelKey = key.toLowerCase();
+							const translated = labelMap.has(labelKey) ? labelMap.get(labelKey).get(rawValue) : undefined;
+							const displayValue = translated ?? rawValue ?? '';
+							return `"${displayValue.toString().replace(/"/g, '""')}"`;
+						})
+						.join(','),
+				),
+			];
+
+			const csvContent = '\uFEFF' + csvRows.join('\r\n');
+			const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+			const fileName = `Total_${formattedTotal}_${productName}_${dateStr}.csv`;
+
+			const link = document.createElement('a');
+			link.href = URL.createObjectURL(blob);
+			link.download = fileName;
+			document.body.appendChild(link);
+			link.click();
+			document.body.removeChild(link);
+			URL.revokeObjectURL(link.href);
+		} catch (error) {
+			if (error.name === 'AbortError') {
+				console.warn('❌ Download canceled by user.');
+			} else {
+				console.error('❌ Download failed:', error);
+				alert(lang.startsWith('fr-') ? 'Le téléchargement a échoué.' : 'Download failed.');
+			}
+		} finally {
+			spinner.style.display = 'none';
+			cancelButton.style.display = 'none';
+			cancelButton.classList.remove('enabled');
+			csvLink.style.pointerEvents = 'auto';
+			csvLink.style.opacity = '1';
+			csvLink.textContent = isFrench ? 'Tout télécharger (CSV)' : 'Download all (CSV)';
+			csvLink.setAttribute('title', csvLink.textContent);
+		}
+	});
+
+	const totalRecordsElement = document.getElementById('total-records');
+	if (totalRecordsElement) totalRecordsElement.textContent = totalRecords.toLocaleString();
+
+	const uniqueValues = { brand: {} };
+	tableRows.forEach((row) => {
+		const brand = row.getAttribute('data-brand');
+		incrementCount(uniqueValues.brand, brand);
+	});
+	function incrementCount(filter, value) {
+		if (!filter[value]) filter[value] = 0;
+		filter[value]++;
+	}
+
+	function populateFilter(filterElement, uniqueValues) {
+		filterElement.innerHTML = '';
+
+		const brandNames = Object.keys(uniqueValues).sort((a, b) => a.localeCompare(b, isFrench ? 'fr' : 'en'));
+		const showSearch = brandNames.length > 11;
+
+		if (showSearch) {
+			const existingSearch = document.getElementById('brand-filter-search');
+			if (existingSearch) existingSearch.remove();
+
+			const searchInput = document.createElement('input');
+			searchInput.type = 'text';
+			searchInput.id = 'brand-filter-search';
+			searchInput.placeholder = isFrench ? 'Rechercher une marque' : 'Search brand name';
+			searchInput.setAttribute('aria-label', searchInput.placeholder);
+			searchInput.style.marginBottom = '10px';
+			searchInput.style.width = '100%';
+			filterElement.parentNode.insertBefore(searchInput, filterElement);
+
+			searchInput.addEventListener('input', () => {
+				const searchValue = searchInput.value.toLowerCase().trim();
+				const brandLabels = Array.from(filterElement.querySelectorAll('label'));
+				const matched = [];
+				const unmatched = [];
+				brandLabels.forEach((label) => {
+					const labelText = label.textContent.toLowerCase();
+					if (!searchValue || labelText.includes(searchValue)) matched.push(label);
+					else unmatched.push(label);
+				});
+				filterElement.innerHTML = '';
+				matched.forEach((label) => {
+					label.style.display = '';
+					filterElement.appendChild(label);
+					filterElement.appendChild(document.createElement('br'));
+				});
+				unmatched.forEach((label) => {
+					label.style.display = 'none';
+					filterElement.appendChild(label);
+					filterElement.appendChild(document.createElement('br'));
+				});
+			});
+		}
+
+		brandNames.forEach((value) => {
+			if (value && value !== '-') {
+				const label = document.createElement('label');
+				const checkbox = document.createElement('input');
+				checkbox.type = 'checkbox';
+				checkbox.value = value;
+				checkbox.checked = persistedFilters.BrandName?.value?.includes(value) || false;
+				label.appendChild(checkbox);
+				label.appendChild(document.createTextNode(` ${value} (${uniqueValues[value]})`));
+				filterElement.appendChild(label);
+				filterElement.appendChild(document.createElement('br'));
+			}
+		});
+	}
+
+	/* =========================
+	   PAGINATION
+	========================= */
+	function updatePaginationLinks() {
+		const paginationDiv = document.getElementById('pagination');
+		paginationDiv.innerHTML = '';
+
+		if (totalPages === 0 || totalRecords === 0) {
+			paginationDiv.style.display = 'none';
+			paginationDiv.innerHTML = '';
+			return;
+		} else {
+			paginationDiv.style.display = 'flex';
+		}
+
+		const half = Math.floor(maxVisibleButtons / 2);
+		let start = 1;
+		let end = totalPages;
+
+		if (totalPages > maxVisibleButtons) {
+			start = Math.max(1, currentPage - half);
+			end = Math.min(totalPages, currentPage + half);
+
+			if (end - start + 1 < maxVisibleButtons) {
+				if (start === 1) end = Math.min(totalPages, start + maxVisibleButtons - 1);
+				else start = Math.max(1, end - maxVisibleButtons + 1);
+			}
+		}
+
+		if (currentPage > 1) {
+			paginationDiv.appendChild(createPaginationButton(isFrench ? 'Premier' : 'First', 1));
+			paginationDiv.appendChild(createPaginationButton(isFrench ? 'Précédent' : 'Previous', currentPage - 1));
+		}
+
+		for (let i = start; i <= end; i++) {
+			const button = createPaginationButton(i, i);
+			if (i === currentPage) button.classList.add('active');
+			paginationDiv.appendChild(button);
+		}
+
+		if (currentPage < totalPages) {
+			paginationDiv.appendChild(createPaginationButton(isFrench ? 'Suivant' : 'Next', currentPage + 1));
+			paginationDiv.appendChild(createPaginationButton(isFrench ? 'Dernier' : 'Last', totalPages));
+		}
+	}
+
+	function createPaginationButton(text, page) {
+		const button = document.createElement('button');
+		button.textContent = text;
+		button.className = 'pagination-btn';
+		button.dataset.page = page;
+		button.addEventListener('click', async () => {
+			toggleLoading(true);
+			cancelInflight();
+			try {
+				await fetchRecords(page);
+				window.scrollTo({ top: document.getElementById('tableData-table').offsetTop, behavior: 'smooth' });
+			} finally {
+				toggleLoading(false);
+			}
+		});
+		return button;
+	}
+
+	function updateActivePaginationButton(page) {
+		document.querySelectorAll('#pagination .pagination-btn').forEach((btn) => {
+			const btnPage = parseInt(btn.dataset.page);
+			if (btnPage === page) btn.classList.add('active');
+			else btn.classList.remove('active');
+		});
+	}
+
+	function getRowDataFromDOM(row) {
+		const rowData = {};
+		rowData.ModelNumber = row.querySelector('td:nth-child(2) a')?.textContent.trim() || '-';
+		rowData.BrandName = row.querySelector('td:nth-child(3)')?.textContent.trim() || '-';
+
+		columnHeaders.forEach((header) => {
+			const columnName = header.getAttribute('data-column');
+			const cell = row.querySelector(`td[data-column="${columnName}"]`);
+			if (cell) {
+				const field = columnName.replace(/^spl_/, '');
+				rowData[field] = cell.textContent.trim();
+			}
+		});
+		return rowData;
+	}
+
+	/* =========================
+	   APPLY / RESET FILTERS
+	========================= */
+	applyBtn.addEventListener('click', async () => {
+		applyBtn.disabled = true;
+		csvLimitWarning.style.display = 'none';
+		setButtonLoading(applyBtn, true);
+		toggleLoading(true);
+		cancelInflight();
+		setFiltersLoading(true);
+
+		try {
+			persistedFilters = getCurrentFilters(); // store before filter fetch
+
+			const modelSearch = modelSearchInput.value.trim();
+			if (modelSearch && modelSearch.length < 3) {
+				showError(
+					isFrench
+						? 'Entrez au moins 3 caractères pour rechercher un numéro de modèle.'
+						: 'Please enter at least 3 characters to search by model number.',
+				);
+				toggleLoading(false);
+				setButtonLoading(applyBtn, false);
+				return;
+			}
+
+			const fil = fetchFilters(); // start filters first (takes longer)
+			const rec = fetchRecords(1); // then records
+			await rec;
+			Promise.allSettled([fil]);
+		} catch (err) {
+			console.error(err);
+			showError('Failed to fetch records.');
+		} finally {
+			toggleLoading(false);
+			setButtonLoading(applyBtn, false);
+		}
+	});
+
+	document.addEventListener('click', async (event) => {
+		if (event.target && event.target.id === 'reset-filters') {
+			toggleLoading(true);
+			setFiltersLoading(true);
+			document.getElementById('dynamic-filters').innerHTML = '';
+
+			cancelInflight();
+			try {
+				document.querySelectorAll("#brand-filter input[type='checkbox']").forEach((cb) => (cb.checked = false));
+				if (modelSearchInput) modelSearchInput.value = '';
+				persistedFilters = {};
+				selectedItems = [];
+				selectedRowDataMap = {};
+				removeItems = [];
+
+				updateSelectedCount();
+				updateCompareLink();
+				updateRemoveUI();
+				updateRemoveCount();
+
+				document.querySelectorAll("#dynamic-filters input[type='range']").forEach((input) => {
+					input.value = input.max;
+					const span = input.nextElementSibling;
+					if (span) span.textContent = input.max;
+				});
+
+				csvLimitWarning.style.display = 'none';
+
+				const fil = fetchFilters(true); // start filters first (takes longer)
+				const rec = fetchRecords(1, true); // then records
+				await rec;
+				Promise.allSettled([fil]);
+			} catch (err) {
+				console.error(err);
+				if (isTestOrUAT) showError('Failed to reset filters and reload data.');
+			} finally {
+				toggleLoading(false);
+			}
+		}
+	});
+
+	function getCurrentFilters(forceEmpty = false) {
+		if (forceEmpty) return {};
+
+		const filters = {};
+		const selectedBrands = Array.from(document.querySelectorAll("#brand-filter input[type='checkbox']:checked")).map(
+			(cb) => cb.value,
+		);
+		if (selectedBrands.length > 0) {
+			filters.BrandName = { type: 'multiSelect', value: selectedBrands };
+		}
+
+		const modelSearch = modelSearchInput.value.trim();
+		if (modelSearch.length >= 3) {
+			filters.ModelNumber = { type: 'text', value: modelSearch };
+		}
+
+		document.querySelectorAll('#dynamic-filters .filter-section').forEach((section) => {
+			const inputs = section.querySelectorAll('input, select');
+			inputs.forEach((input) => {
+				const name = input.name;
+				const type = input.type;
+				const tag = input.tagName;
+
+				if (type === 'checkbox') {
+					const selected = Array.from(section.querySelectorAll("input[type='checkbox']:checked"))
+						.map((cb) => cb.value)
+						.filter((v) => !isBlankOrDash(v));
+					if (selected.length > 0) filters[name] = { type: 'multiSelect', value: selected };
+				} else if (tag === 'SELECT') {
+					if (!isBlankOrDash(input.value)) filters[name] = { type: 'select', value: input.value };
+				} else if (type === 'range') {
+					const maxValue = parseFloat(input.max);
+					const currentValue = parseFloat(input.value);
+					const defaultStep = parseFloat(input.step);
+
+					if (!filters[name]) filters[name] = { type: 'range', value: currentValue, step: defaultStep };
+					if (currentValue < maxValue) filters[name].active = true;
+					else delete filters[name];
+				} else if (type === 'text') {
+					if (!isBlankOrDash(input.value)) filters[name] = { type: 'text', value: input.value };
+				}
+			});
+		});
+		return filters;
+	}
+
+/* =========================
+   HYDRATE FILTER INPUTS FROM PERSISTED
+========================= */
+function hydrateFilterInputsFromPersisted() {
+	if (!persistedFilters || typeof persistedFilters !== 'object') return;
+
+	Object.entries(persistedFilters).forEach(([name, info]) => {
+		if (!info || info.value == null) return;
+
+		// BrandName is special – its checkboxes don't have name="BrandName"
+		if (name === 'BrandName' && info.type === 'multiSelect') {
+			const values = Array.isArray(info.value) ? info.value : [info.value];
+			document
+				.querySelectorAll('#brand-filter input[type="checkbox"]')
+				.forEach((cb) => (cb.checked = values.includes(cb.value)));
+			return;
+		}
+
+		if (info.type === 'multiSelect') {
+			const values = Array.isArray(info.value) ? info.value : [info.value];
+			document
+				.querySelectorAll(`input[name="${name}"][type="checkbox"]`)
+				.forEach((cb) => (cb.checked = values.includes(cb.value)));
+		} else if (info.type === 'select') {
+			const select = document.querySelector(`select[name="${name}"]`);
+			if (select) select.value = info.value;
+		} else if (info.type === 'range') {
+			const input = document.querySelector(`input[name="${name}"][type="range"]`);
+			if (input) {
+				input.value = info.value;
+				const span = input.nextElementSibling;
+				if (span) span.textContent = input.value;
+			}
+		} else if (info.type === 'text') {
+			const input = document.querySelector(`input[name="${name}"][type="text"]`);
+			if (input) input.value = info.value;
+		}
+	});
+}
+
+
+
+
+
+
+
+
+
+
+	document.addEventListener('click', (e) => {
+		const btn = e.target.closest('.copy-link');
+		if (!btn) return;
+		const a = document.getElementById(btn.dataset.src);
+		if (!a) return;
+		const url = a.href;
+		const done = () => {
+			const tip = document.createElement('span');
+			tip.className = 'copy-tip';
+			tip.style.marginLeft = '6px';
+			tip.style.fontSize = '.85rem';
+			tip.style.color = '#2e7d32';
+			tip.textContent = isFrench ? 'Lien copié!' : 'Copied!';
+			btn.after(tip);
+			setTimeout(() => tip.remove(), 1200);
+		};
+		if (navigator.clipboard?.writeText) {
+			navigator.clipboard.writeText(url).then(done).catch(done);
+		} else {
+			const ta = document.createElement('textarea');
+			ta.value = url;
+			ta.style.position = 'fixed';
+			ta.style.top = '-1000px';
+			document.body.appendChild(ta);
+			ta.focus();
+			ta.select();
+			try {
+				document.execCommand('copy');
+			} catch {}
+			document.body.removeChild(ta);
+			done();
+		}
+	});
+
+	/* =========================
+	   PROGRESSIVE PAGE LOAD
+	========================= */
+	// Safe scheduler that uses requestIdleCallback if available
+	function scheduleIdle(cb, timeout = 500) {
+		if (typeof window.requestIdleCallback === 'function') {
+			return window.requestIdleCallback(cb, { timeout });
+		}
+		return setTimeout(cb, 0);
+	}
+
+	async function displayPage(page) {
+		cancelInflight();
+		const gen = currentGen;
+
+		if (isTestOrUAT) console.log('displayPage(): start for page', page, 'gen', gen);
+
+		toggleLoading(true);
+		const startTime = performance.now(); // ⏱ start timer
+
+		// ---- Start filters fetch FIRST (takes longest) ----
+		const filtersPromise = (async () => {
+			if (gen !== currentGen) return;
+			await fetchFilters();
+			if (isTestOrUAT) console.log('displayPage(): filters hydrated');
+		})();
+
+		// ---- Fetch field labels in background ----
+		const labelsPromise = fetchFieldLabels().then((apiResult) => {
+			if (gen !== currentGen) return;
+			const { fieldLabels = [], headerLabels = [] } = apiResult || {};
+			globalFieldLabels = Array.isArray(fieldLabels) ? fieldLabels : [];
+			globalHeaderLabels = Array.isArray(headerLabels) ? headerLabels : [];
+			if (isTestOrUAT) {
+				console.log('displayPage() headerLabels:', headerLabels);
+				console.log('displayPage() globalHeaderLabels:', globalHeaderLabels);
+			}
+			tryHydrateRenderedLabels();
+		});
+
+		// ---- Fetch records (blocking for first paint) ----
+		const recordsPromise = (async () => {
+			try {
+				await fetchRecords(page);
+			} finally {
+				if (gen === currentGen) {
+					toggleLoading(false);
+					if (isTestOrUAT) console.log('displayPage(): records painted (including empty/error)');
+				}
+			}
+		})();
+
+		// Wait for records first (critical path)
+		await recordsPromise;
+		// Let labels + filters finish in the background (but still count them in total time)
+		await Promise.allSettled([labelsPromise, filtersPromise]);
+	// ✅ Final pass: make sure all inputs (including Inside model / Furnace model)
+	//    match persistedFilters, so values don't disappear after async refreshes
+	hydrateFilterInputsFromPersisted();
+
+
+		const endTime = performance.now(); // ⏱ stop timer
+		if (isTestOrUAT) {
+			console.log(`✅ displayPage(): total load time = ${(endTime - startTime).toFixed(2)} ms`);
+		}
+	}
+
+	displayPage();
+});
+</script>
+	
+	<script>
+        //this event will update the title of the page based on active breadcrumb
+        $('.breadcrumb').ready(function () {
+            if ($('.breadcrumb').is(':visible')) {
+                document.querySelector('title').innerHTML = ($('.breadcrumb > li.active').text() + "Searchable product list | Natural Resources Canada");
+            }
+        });
+
+        function GoToNewEditor() {
+            var editCmsUrlSegment = "EditInCms";
+            var currentUrl = window.location.href;
+            if (currentUrl.indexOf('?') > -1) {
+                var urlSegments = currentUrl.split("?");
+                window.location.href = window.location.origin + '/' + editCmsUrlSegment + window.location.pathname + '?' + urlSegments[1];
+            }
+            else {
+                window.location.href = window.location.origin + '/' + editCmsUrlSegment + window.location.pathname;
+            }
+        }
+    </script>
+	
+		
+		
+	
+		
+				<script>
+					if ('serviceWorker' in navigator) {
+						navigator.serviceWorker.getRegistrations().then(function (registrations) {
+							for (let registration of registrations) {
+								registration.unregister();
+							}
+						}).catch(function (err) {
+							console.log('Service Worker unregister action failed: ', err);
+						});
+					}
+				</script>
+			
+	
+		
+	<!--Start Show Session Expire Warning Popup here -->
+    
+</body>
+</html>
+<!-- Generated at 12/20/2025 11:13:48 PM -->
+<!-- Page OK -->

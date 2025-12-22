@@ -8,7 +8,12 @@ const withPWA = require('next-pwa')({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // Config options
-  turbopack: {} // Silence Turbopack warning when using webpack plugins like next-pwa
+  turbopack: {}, // Silence Turbopack warning when using webpack plugins like next-pwa
+  experimental: {
+    serverActions: {
+      bodySizeLimit: '6mb',
+    },
+  },
 };
 
 

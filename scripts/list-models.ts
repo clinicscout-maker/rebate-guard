@@ -34,12 +34,9 @@ async function listModels() {
             return;
         }
         const data = await response.json();
-        console.log("Available Models:");
-        data.models.forEach((m: any) => {
-            if (m.name.includes("gemini")) {
-                console.log(`- ${m.name} (${m.supportedGenerationMethods})`);
-            }
-        });
+        const modelNames = data.models.map((m: any) => m.name).join('\n');
+        fs.writeFileSync('models.txt', modelNames);
+        console.log("Saved models to models.txt");
     } catch (error) {
         console.error("Fetch error:", error);
     }
